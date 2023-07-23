@@ -1,0 +1,19 @@
+body {
+  color: lightseagreen;
+  background-color: #1e1f27;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav .active {
+  text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  body {
+    color: lightgreen;
+  }
+}
