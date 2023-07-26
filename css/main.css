@@ -1,4 +1,6 @@
 body {
+  margin: 0;
+  padding: 0;
   color: lightseagreen;
   background-color: #1e1f27;
 }
@@ -10,6 +12,10 @@ nav a {
 
 nav .active {
   text-decoration: underline;
+}
+
+#header-logo {
+  height: 8vw;
 }
 
 @media (min-width: 600px) {
