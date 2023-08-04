@@ -31,7 +31,7 @@ body {
 header,
 main,
 footer {
-  border-style: dotted;
+  /* border-style: dotted; */
   flex: 1;
 }
 
@@ -46,7 +46,6 @@ footer {
     align-items: center;
     padding: 1em 5em;
     background-color: #1e1f27;
-    border-style: dotted;
   }
 
   nav ul li a {
@@ -90,20 +89,25 @@ footer {
   main {
     padding: 1em 5em;
     background-color: #1e1f27;
-    border-style: dotted;
   }
 
   footer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    position: relative;
     height: 150px;
     background-color: rgba(0, 0, 0, 25%);
-    /* border-style: dotted; */
-    position: relative;
   }
 
   #footer-logo {
+    margin: 20px;
     height: 8vw;
+  }
+
+  footer nav ul li {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
   }
 
   .bottom-line {
