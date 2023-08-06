@@ -103,13 +103,17 @@ footer {
 
   #footer-logo {
     margin: 20px;
-    height: 8vw;
+    height: 7vw;
   }
 
-  #footer-middle-nav {
+  #footer-middle-nav li {
     padding-top: 10px;
     display: flex;
     flex-direction: column;
+  }
+
+  #footer-middle-nav li a {
+    font-size: 14px;
   }
 
   .social-media-nav {
