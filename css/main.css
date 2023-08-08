@@ -13,6 +13,7 @@ body {
 }
 
 body {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: "Poppins", sans-serif;
@@ -26,13 +27,6 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-header,
-main,
-footer {
-  /* border-style: dotted; */
-  flex: 1;
 }
 
 @media (min-width: 600px) {
@@ -90,14 +84,17 @@ footer {
     padding: 1em 5em;
     background-color: #1e1f27;
   }
-
   footer {
+    margin-top: auto;
+    align-self: flex-end;
+  }
+  .footer-container {
     display: flex;
     flex-direction: row;
-    position: relative;
     justify-content: space-between;
     padding: 20px;
     height: 150px;
+    width: 100%;
     background-color: rgba(0, 0, 0, 25%);
   }
 
@@ -125,15 +122,19 @@ footer {
   }
 
   .bottom-line {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 30px;
     align-self: flex-end;
+    width: 100vw;
+    height: 30px;
     background-color: rgba(0, 0, 0, 50%);
     font-size: 13px;
     color: rgb(138, 138, 138);
     text-align: center;
+  }
+
+  /* about */
+
+  .about-container {
+    height: 150px;
+    background-color: blue;
   }
 }
