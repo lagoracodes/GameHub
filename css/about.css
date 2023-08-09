@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: lightseagreen;
+  background-color: #1e1f27;
+}
+
+#header-logo {
+  height: 30vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 600px) {
+  body {
+    color: lightgreen;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 5em;
+    background-color: #1e1f27;
+  }
+
+  nav ul li a {
+    font-weight: 600;
+    font-size: 17px;
+    color: #fcfcfc;
+    text-underline-offset: 10px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  nav li {
+    display: inline-block;
+    margin: 0px 20px;
+    list-style: none;
+  }
+
+  .active {
+    text-decoration: underline;
+  }
+
+  .right-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .right-nav-box {
+    width: 8px;
+    height: 8px;
+    margin: 10px;
+    background-color: aqua;
+  }
+
+  #header-logo {
+    height: 9vw;
+  }
+
+  main {
+    padding: 1em 5em;
+    background-color: #1e1f27;
+  }
+  footer {
+    margin-top: auto;
+    align-self: flex-end;
+  }
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    height: 150px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 25%);
+  }
+
+  #footer-logo {
+    margin: 20px;
+    height: 7vw;
+  }
+
+  #footer-middle-nav li {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #footer-middle-nav li a {
+    font-size: 14px;
+  }
+
+  .social-media-nav {
+    width: 10em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  .bottom-line {
+    align-self: flex-end;
+    width: 100vw;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 50%);
+    font-size: 13px;
+    color: rgb(138, 138, 138);
+    text-align: center;
+  }
+
+  /* about */
+
+  .about-container {
+    height: 150px;
+    /* background-color: blue; */
+  }
+}
