@@ -5,7 +5,6 @@
   margin: 0;
   padding: 0;
   min-width: 0;
-  min-height: 0;
 }
 
 html,
@@ -15,9 +14,9 @@ body {
 }
 
 body {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: lightseagreen;
@@ -33,16 +32,31 @@ body {
 
 @media (min-width: 600px) {
   body {
-    color: lightgreen;
+    color: white;
   }
 
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 5em;
     background-color: #1e1f27;
+    width: 100%;
+    /* border: 2px solid red; */
   }
+
+  /* header > * {
+    border: 2px dotted royalblue;
+  } */
+
+  .left-nav,
+  .right-nav {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  /* body > * {
+    border: 2px dotted tan;
+  } */
 
   nav ul li a {
     font-weight: 600;
@@ -50,6 +64,10 @@ body {
     color: #fcfcfc;
     text-underline-offset: 10px;
   }
+
+  /* .middle-nav {
+    border: 2px dotted magenta;
+  } */
 
   a {
     text-decoration: none;
@@ -65,10 +83,15 @@ body {
     text-decoration: underline;
   }
 
+  .left-nav {
+    display: flex;
+  }
+
   .right-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
+    /* margin-left: auto; */
   }
 
   .right-nav-box {
@@ -82,13 +105,11 @@ body {
     height: 9vw;
   }
 
-  main {
-    background-color: #1e1f27;
-  }
-  footer {
+  /* footer {
     margin-top: auto;
     align-self: flex-end;
-  }
+  } */
+
   .footer-container {
     display: flex;
     flex-direction: row;
@@ -134,9 +155,12 @@ body {
 
   /* about */
 
-  .about-container {
-    height: 150px;
-    /* background-color: blue; */
+  main {
+    background-color: #1e1f27;
+    /* background-color: darkblue; */
+    flex: 1;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
   }
 
   .reviews-container {
@@ -144,10 +168,6 @@ body {
     height: 200px;
     background-color: rgba(255, 255, 255, 5%);
     padding: 20px;
-  }
-
-  .reviews {
-    border-style: dotted;
   }
 
   .review-logo {
@@ -159,7 +179,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 2px dotted blue;
+    border: 2px dotted magenta;
   }
 
   .reviews-ul li {
@@ -167,6 +187,6 @@ body {
     min-height: 0;
     list-style: none;
     padding: 15px;
-    border: 2px dotted red;
+    border: 2px dotted turquoise;
   }
 }
