@@ -5,6 +5,8 @@
   margin: 0;
   padding: 0;
   min-width: 0;
+  text-decoration: none;
+  list-style: none;
 }
 
 html,
@@ -16,18 +18,83 @@ body {
 body {
   display: flex;
   flex-direction: column;
-
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  color: lightseagreen;
+  color: lightgray;
   background-color: #1e1f27;
+}
+
+/* navigation */
+
+.nav {
+  border-bottom: 1px solid grey;
+}
+
+.nav__toggle {
+  position: absolute;
+  cursor: pointer;
+  margin: 0rem 1rem;
+  right: 0;
+}
+
+.nav svg {
+  /* border: 1px dotted hotpink; */
+  width: 1.5rem;
+  fill: lightgray;
+}
+
+.nav__checkbox {
+  display: none;
+}
+
+.nav__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin: 1rem;
+}
+
+.nav__menu li {
+  display: none;
+}
+
+.nav__menu li:first-child {
+  display: block;
+  /* border: 2px dotted hotpink; */
+}
+
+.nav__menu a {
+  /* border: 2px dotted hotpink; */
+  color: inherit;
+  font-size: 1rem;
+}
+
+.close {
+  display: none;
+}
+
+.menu {
+  margin-top: 0.2rem;
 }
 
 #header-logo {
   height: 30vw;
-  display: block;
+  /* display: block;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
+}
+
+#nav__checkbox:checked ~ ul.nav__menu li {
+  display: block;
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .close {
+  display: block;
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .menu {
+  display: none;
 }
 
 @media (min-width: 600px) {
