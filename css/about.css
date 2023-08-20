@@ -26,6 +26,10 @@ body {
 
 /* navigation */
 
+.big-nav {
+  display: none;
+}
+
 .nav {
   border-bottom: 1px solid grey;
 }
@@ -97,18 +101,37 @@ body {
   display: none;
 }
 
-@media (min-width: 600px) {
-  body {
-    color: white;
-  }
+.review-logo {
+  height: auto;
+  width: auto;
+  max-width: 10rem;
+}
 
-  header {
+@media (min-width: 600px) {
+  /* .nav__toggle {
+    display: none;
+  } */
+  /* .nav__menu {
+    flex-direction: row;
+  }
+  .nav__menu li {
+    display: block;
+  } */
+
+  .big-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #1e1f27;
     width: 100%;
-    /* border: 2px solid red; */
+  }
+
+  .nav {
+    display: none;
+  }
+
+  body {
+    color: white;
   }
 
   /* header > * {
