@@ -242,12 +242,11 @@ main > p {
     gap: 0.5rem;
     /* border: 2px dotted aqua; */
   }
-#search {
-  fill:white;
-}
+
   .icon {
     width: 1.7rem;
-    fill: lightgray !important;
+    fill: #f6f5f4;
+    border: 2px dotted aqua;
   }
 
   #header-logo {
