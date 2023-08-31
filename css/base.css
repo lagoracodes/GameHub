@@ -167,17 +167,6 @@ h1 {
   padding-top: 5%;
 }
 
-.bottom-line {
-  align-self: flex-end;
-  width: 100vw;
-  height: 30px;
-  background-color: rgba(0, 0, 0, 50%);
-  font-size: 13px;
-  color: rgb(138, 138, 138);
-  text-align: center;
-  padding-top: 1.5%;
-}
-
 @media (min-width: 600px) {
   .nav__toggle {
     display: none;
@@ -250,7 +239,7 @@ h1 {
     border: 2px dotted aqua;
   }
 
-  /* FOOTER */
+  /* footer */
 
   footer {
     margin-top: auto;
@@ -279,6 +268,7 @@ h1 {
 
   #footer-middle-nav li a {
     font-size: 14px;
+    color: lightgray;
   }
 
   .social-media-nav {
