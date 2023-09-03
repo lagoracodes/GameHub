@@ -5,7 +5,28 @@
     padding: 1em 5em;
     background-color: #1e1f27;
   }
+
+  .container {
+    display: flex;
+    gap: 1rem;
+  }
   
+  .game-box {
+    width: 45px;
+    height: 45px;
+    background-color: plum;
+  }
+
+  .sort {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .sort-box {
+    width: 15px;
+    height: 15px;
+    background-color: papayawhip;
+  }
 
   /* games */
 }

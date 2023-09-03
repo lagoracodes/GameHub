@@ -1,9 +1,19 @@
-
 @media (min-width: 600px) {
-    main {
+  main {
     padding: 1em 5em;
     background-color: #1e1f27;
   }
-  
+
+  .line {
+    width: 150px;
+    height: 20px;
+    background-color: lightblue;
+  }
+
+  .table {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
   /* contact */
 }
