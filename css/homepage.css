@@ -6,6 +6,13 @@ main {
   align-items: center;
   padding: 2rem 0;
 }
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+}
 
 .container {
   display: flex;
@@ -14,14 +21,38 @@ main {
   gap: 1rem;
 }
 
+.game-box {
+  display: flex;
+  flex-direction: column;
+}
+
 .video-game {
   width: 14.5rem;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;  
+
 }
 
 .button-container {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.button {
+  width:50%;
+  height: 4rem;
+  padding: 0.3rem;
+  color: #ffffff;
+  background-color: #1f39c9;
+}
+
+.btn-right {
+  border-bottom-right-radius: 30px;  
+}
+
+.btn-left {
+  border-bottom-left-radius: 30px;  
 }
 
 @media (min-width: 600px) {
