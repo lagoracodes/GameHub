@@ -101,7 +101,7 @@ button:hover {
   gap: 2rem;
 }
 
-.user {
+.custom-1 {
   width: 20rem;
   height: 8rem;
   border-radius: 40px;
@@ -112,20 +112,37 @@ button:hover {
   /* border: 1px solid yellow; */
 }
 
-.user > * {
+.custom-1 > * {
   gap: 0.2rem;
+  /* border: 1px solid yellow; */
 }
 
-.user-2 {
+.custom-2 {
   justify-content: center;
   align-items: left;
   gap: 0.1rem;
   /* border: 1px solid green; */
 }
 
+.custom-3 {
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  /* border: 1px solid green; */
+}
+
 .avatar {
   width: 4rem;
   height: 4rem;
+}
+
+.icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+h4 {
+  font-weight: 200;
 }
 
 @media (min-width: 600px) {
