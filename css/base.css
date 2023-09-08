@@ -26,37 +26,41 @@ body {
   overflow-x: hidden;
 }
 
+h1, h2 {
+  padding: 1rem 0;
+}
+
 .circle-purple {
   position: absolute;
-  top: -480px;
-  left: -150px;
+  top: -710px;
+  left: -130px;
   z-index: -1;
-  width: 574px;
-  height: 574px;
+  width: 1000px;
+  height: 800px;
   border-radius: 50%;
   background-color: rgba(184, 94, 255, 50%);
   filter: blur(150px);
 }
 
 .p2 {
-  top: 800px;
-  left: -500px;
+  top: 500px;
+  left: -950px;
 }
 
 .circle-blue {
   position: absolute;
   top: 200px;
-  left: -150px;
+  left: 150px;
   z-index: -1;
   width: 574px;
   height: 574px;
   border-radius: 50%;
-  background-color: #1f2c7b;
+  background-color: rgba(31, 44, 123, 80%);
   filter: blur(150px);
 }
 
 .b2 {
-  top: 1000px;
+  top: 1100px;
   left: 150px;
 }
 
