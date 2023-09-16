@@ -106,10 +106,12 @@ button:hover {
   height: 8rem;
   border-radius: 40px;
   background-color: rgba(129, 106, 224, 13%);
-  justify-content: center;
+  /* justify-content: center; */
+  padding-left: 2.5rem;
   align-items: center;
   gap: 1rem;
-  /* border: 1px solid yellow; */
+  /* border: 3px dotted hotpink; */
+
 }
 
 .custom-1 > * {
@@ -118,10 +120,9 @@ button:hover {
 }
 
 .custom-2 {
-  justify-content: center;
-  align-items: left;
+  align-items: flex-start;
   gap: 0.1rem;
-  /* border: 1px solid green; */
+  border: 3px dotted green;
 }
 
 .custom-3 {
@@ -134,6 +135,7 @@ button:hover {
 .avatar {
   width: 4rem;
   height: 4rem;
+  border: 3px dotted yellow;
 }
 
 .icon {
@@ -143,6 +145,7 @@ button:hover {
 
 h4 {
   font-weight: 200;
+  font-size: 0.8rem;
 }
 
 @media (min-width: 600px) {
