@@ -142,8 +142,8 @@ svg {
   height: 25px;
 }
 
-.right svg {
-  margin-top: 0.5rem;
+.right {
+  display: none;
 }
 
 .nav svg {
@@ -223,17 +223,7 @@ svg {
   text-decoration: underline;
 }
 
-.right {
-  display: flex;
-  justify-content: right;
-  align-items: top;
-  flex-shrink: 0;
-  gap: 0.7rem;
-  padding-right: 0.4rem;
-  padding-top: 0.25rem;
 
-  /* border: 2px dotted aqua; */
-}
 
 .icon {
   width: 1.7rem;
@@ -253,12 +243,14 @@ nav ul li a {
   /* border: 2px dotted hotpink; */
 }
 
+
 .footer-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 150px;
   width: 100%;
+  padding-top: 1rem;
   background-color: rgba(0, 0, 0, 25%);
   /* border: 2px dotted hotpink; */
 }
@@ -268,6 +260,26 @@ nav ul li a {
 }
 
 #footer-middle-nav li {
+  display: none;
+}
+
+.ver-line {
+  display: none;
+}
+
+.footer-app-store-icons {
+  display: none;
+}
+
+.get-app-con {
+  display: none;
+}
+
+.footer-contacts p {
+  display: none;
+}
+
+.footer-h3 {
   display: none;
 }
 
@@ -324,6 +336,15 @@ nav ul li a {
 .container-row {
   display: flex;
   flex-direction: row;
+}
+
+.cstm-2 {
+  font-size: 1.65rem;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.cards {
+  gap: 2rem;
 }
 
 .game-box {
@@ -392,7 +413,6 @@ nav ul li a {
   justify-content: center;
   margin: 0 auto;
   font-weight: 600;
-  /* font-size: */
 }
 
 .btn-left {
@@ -667,6 +687,14 @@ nav ul li a {
     flex-basis: 33%;
   }
 
+  .right {
+    justify-content: right;
+    gap: 0.7rem;
+    padding-right: 0.4rem;
+    padding-top: 0.25rem;
+    /* border: 2px dotted aqua; */
+  }
+
   /* .nav > * {
     border: 2px dotted hotpink;
   } */
@@ -841,14 +869,6 @@ nav ul li a {
     /* border: 4px dotted darkorchid; */
   }
 
-  .cstm-1 {
-    padding-top: 3rem;
-  }
-
-  .cstm-2 {
-    padding-bottom: 3rem;
-  }
-
   .sort-container {
     width: 800px;
     height: 100px;
@@ -979,8 +999,8 @@ nav ul li a {
     flex-wrap: wrap;
   }
 
-  header nav .right {
+  /* header nav .right {
     flex-direction: row;
     justify-content: center;
-  }
+  } */
 }
