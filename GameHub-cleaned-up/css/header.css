@@ -1,12 +1,22 @@
 @import "/css/colors.css";
 
-header > nav {
-  padding: 2.5rem 1.063rem;
+/* border: 2px dotted yellow; */
+
+.active,
+.active:hover {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-color: var(--light-grey-25);
+  text-decoration-thickness: 1.5px;
 }
 
 /* mobile menu */
 
 @media only screen and (max-width: 600px) {
+  header > nav {
+    padding: 2.5rem 1.063rem;
+  }
+
   .logo {
     width: 8rem;
     height: auto;
@@ -28,6 +38,10 @@ header > nav {
 /* desktop menu */
 
 @media only screen and (min-width: 601px) {
+  header > nav {
+    padding: 1.3rem 11.25rem;
+  }
+
   .desktop-left,
   .desktop-mid,
   .desktop-right {
@@ -42,9 +56,13 @@ header > nav {
     height: auto;
   }
 
-  svg {
+  .desktop-header-icons > svg {
     width: 1.562rem;
     height: auto;
+  }
+
+  .desktop-header-icons > svg:not(:last-child) {
+    margin-right: 10px;
   }
 
   .shopping-cart {
@@ -64,4 +82,30 @@ header > nav {
   .desktop-menu > a:not(:last-child) {
     margin-right: 30px;
   }
+
+  .desktop-menu > a {
+    font-weight: 500;
+  }
+
+  .text-glow > a:hover {
+    color: var(--light-grey-hover);
+    text-shadow: 0 0 10px var(--saturated-purple);
+  }
+}
+
+/* svg icon glow on hover */
+
+svg:hover .shopping-cart,
+svg:hover circle {
+  stroke: var(--light-grey-hover);
+}
+
+svg:hover .icon {
+  fill: var(--light-grey-hover);
+}
+
+svg:hover .shopping-cart,
+svg:hover circle,
+svg:hover .icon {
+  filter: drop-shadow(0 0 1.75px var(--saturated-purple));
 }

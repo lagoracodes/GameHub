@@ -35,6 +35,10 @@ a:hover {
   color: var(--light-grey);
 }
 
+svg:hover {
+  cursor: pointer;
+}
+
 /* flexbox styles */
 
 .flex {

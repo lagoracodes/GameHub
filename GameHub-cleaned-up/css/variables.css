@@ -2,9 +2,12 @@
   /* colors */
   --bg-c: #1e1f27;
   --light-grey: #d3d3d3;
+  --light-grey-25: rgba(211, 211, 211, 25%);
+  --light-grey-hover: #eeeeee;
   --dark-grey-25: rgba(0, 0, 0, 25%);
   --dark-grey-50: rgba(0, 0, 0, 50%);
   --light-purple: #a699f7;
+  --saturated-purple: #6b54ff;
   --dark-purple: rgba(129, 106, 224, 13%);
   --light-blue: rgba(94, 118, 255, 0.25%);
   --dark-blue: rgba(31, 57, 201, 90%);
