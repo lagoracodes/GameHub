@@ -46,3 +46,14 @@ svg circle {
 .desktop-menu > a:not(:last-child) {
   margin-right: 30px;
 }
+
+@media only screen and (min-width: 601px) {
+  .desktop-left,
+  .desktop-mid,
+  .desktop-right {
+    display: flex;
+    flex: 1;
+    max-width: 100%;
+    flex-basis: 33%;
+  }
+}
