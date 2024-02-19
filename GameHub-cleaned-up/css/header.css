@@ -1,0 +1,48 @@
+@import "/css/colors.css";
+
+.logo {
+  width: 9.5rem;
+  height: auto;
+}
+
+/* mobile menu */
+.hamburger-icon > span {
+  display: block;
+  width: 2.312rem;
+  height: 0.375rem;
+  background-color: var(--light-grey);
+  border-radius: 2px;
+}
+
+.hamburger-icon > span:not(:last-child) {
+  margin-bottom: 0.437rem;
+}
+
+header > nav {
+  padding: 2.5rem 1.063rem;
+}
+
+/* desktop menu */
+
+svg {
+  width: 1.562rem;
+  height: auto;
+}
+
+.shopping-cart {
+  stroke: var(--light-grey);
+}
+
+svg circle {
+  stroke: var(--light-grey);
+}
+
+.icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  fill: var(--light-grey);
+}
+
+.desktop-menu > a:not(:last-child) {
+  margin-right: 30px;
+}
