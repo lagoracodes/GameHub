@@ -1,6 +1,13 @@
 @import "/css/header.css";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap");
 @import "/css/variables.css";
+@import "/css/animations.css";
+@import "/css/main.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap");
+
+@font-face {
+  font-family: "NineTsuki";
+  src: url("/resources/fonts/NineTsuki.otf");
+}
 
 :root {
   font-size: 16px;
@@ -23,9 +30,16 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   color: var(--light-grey);
-  font-size: var(--font-s);
+  font-size: 1em; /* 16px */
   background-color: var(--bg-c);
   line-height: 1.3;
+}
+
+h1 {
+  font-family: "nineTsuki", sans-serif;
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 a,
@@ -61,14 +75,61 @@ svg:hover {
   justify-content: right;
 }
 
-/* visibility */
 @media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.5em; /* 48px */
+  }
+
+  h2 {
+    font-size: 2em; /* 36px */
+  }
+
+  h3 {
+    font-size: 1.5em; /* 28px */
+  }
+
+  h4 {
+    font-size: 1.125em; /* 18px */
+  }
+
+  .container {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  /* visibility */
   .hide-for-mobile-devices {
     display: none;
   }
 }
 
 @media only screen and (min-width: 601px) {
+  h1 {
+    font-size: 3em; /* 48px */
+  }
+
+  h2 {
+    font-size: 2.25em; /* 36px */
+  }
+
+  h3 {
+    font-size: 1.75em; /* 28px */
+  }
+
+  h4 {
+    font-size: 1.125em; /* 18px */
+  }
+
+  .container {
+    padding-right: 11.25rem;
+    padding-left: 11.25rem;
+  }
+
+  /* visibility */
   .hide-for-desktop-devices {
     display: none;
   }

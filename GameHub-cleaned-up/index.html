@@ -8,16 +8,21 @@
   </head>
   <body>
     <header>
-      <nav class="flex f-jc-sb f-ai-c">
+      <div class="overlay has-fade"></div>
+      <nav class="container flex f-jc-sb f-ai-c">
         <a href="index.html" class="desktop-left">
           <img
-            src="images/logo/GameHub_Logo.png"
+            src="/resources/images/logo/GameHub_Logo.png"
             class="logo"
             alt="GameHub logo"
           />
         </a>
 
-        <a href="#" class="hamburger-icon hide-for-desktop-devices">
+        <a
+          id="btnHamburger"
+          href="#"
+          class="hamburger-icon hide-for-desktop-devices"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -135,8 +140,42 @@
           </svg>
         </div>
       </nav>
+      <div class="mobile-menu container hide-for-desktop-devices has-fade">
+        <a class="active" href="#">Home</a>
+        <a href="#">Games</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
     </header>
-    <main></main>
+    <main class="container">
+      <h1>Trending Games</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+        esse cillum dolore eu fugiat nulla pariatur.
+      </p>
+    </main>
     <footer></footer>
     <script src="js/script.js"></script>
   </body>
