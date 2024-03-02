@@ -3,10 +3,9 @@ const btnHamburger = document.querySelector("#btnHamburger");
 const header = document.querySelector("header");
 const overlay = document.querySelector(".overlay");
 const hasFade = document.querySelectorAll(".has-fade");
+const bgColor = document.querySelector(".bg-color-bubbles");
 
 btnHamburger.addEventListener("click", function () {
-  console.log("click hamburger");
-
   if (header.classList.contains("open")) {
     // close the mobile menu
     body.classList.remove("no-scroll");
@@ -25,3 +24,5 @@ btnHamburger.addEventListener("click", function () {
     });
   }
 });
+
+// bgColor.style.height = body.scrollHeight + "px"; // poitioning background color bubbles depending on the page height
