@@ -1,0 +1,95 @@
+.footer-top-row {
+  background-color: rgba(0, 0, 0, 25%);
+}
+
+/* .footer-top-row > .flex > * {
+  border: 1px solid yellow;
+} */
+
+footer a {
+  display: block;
+}
+
+footer .flex div p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.social-media-icons svg:not(:last-child) {
+  margin-right: 0.35rem;
+}
+
+.footer-bottom-row {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 50%);
+  padding: 0.35rem 0;
+}
+
+.footer-bottom-row h5 {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 0.725rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer-top-row > .flex {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0 2rem;
+  }
+
+  footer .logo {
+    width: 5rem;
+  }
+
+  .social-media-icons svg {
+    width: 2rem;
+    height: auto;
+  }
+
+  .social-media-icons h4 {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .footer-top-row > .flex {
+    justify-content: space-around;
+    margin: 0 4rem;
+    padding: 2.5rem 0;
+  }
+
+  footer .logo {
+    width: 8rem;
+  }
+
+  .footer-menu a {
+    font-size: 0.75rem;
+  }
+
+  .footer-menu a:not(:last-child) {
+    padding-bottom: 0.5rem;
+  }
+
+  .app-icons .img {
+    width: 7rem;
+    cursor: pointer;
+  }
+
+  .app-icons {
+    flex-wrap: wrap;
+    gap: 0.2rem;
+  }
+
+  .social-media-icons svg {
+    width: 1.8rem;
+    height: auto;
+  }
+
+  .divider-line {
+    width: 1px;
+    height: 85px;
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+}
