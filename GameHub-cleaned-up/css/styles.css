@@ -35,6 +35,8 @@ html {
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   font-family: "Poppins", sans-serif;
   color: var(--light-grey);
   font-size: 1em; /* 16px */
@@ -97,6 +99,11 @@ svg:hover {
 
 .flex {
   display: flex;
+}
+
+body.flex {
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .f-jc-sb {
