@@ -14,10 +14,6 @@
   justify-content: space-between;
 }
 
-.grid:has(.game-card) {
-  grid-template-columns: repeat(3, 1fr);
-}
-
 /* .game-card:hover {
   box-shadow: 3px 3px 7px rgba(69, 43, 185, 0.37),
     -3px -3px 7px rgba(166, 33, 170, 0.26);
@@ -129,6 +125,27 @@ button:hover {
   transform: scale(0.85);
 }
 
+/* about */
+
+#reviews {
+  width: 100vw;
+  gap: 5rem;
+  margin-left: -11.25rem;
+  padding: 5rem 0;
+  background-color: #d9d9d908;
+}
+
+#reviews li {
+  width: 225px;
+}
+
+#reviews li p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1875rem;
+  font-weight: 200;
+  font-style: italic;
+}
+
 @media only screen and (max-width: 600px) {
   .flex:has(.game-card) {
     flex-direction: column;
@@ -139,6 +156,11 @@ button:hover {
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+
+  /* about */
+  #reviews.flex {
+    flex-direction: column;
   }
 }
 
@@ -151,5 +173,18 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(3, 272px);
     gap: 1.25rem;
+  }
+
+  /* games */
+
+  #all-games .grid-wrapper {
+    grid-template-columns: repeat(3, 16.25rem);
+    column-gap: 3rem;
+    row-gap: 5rem;
+  }
+
+  /* about */
+  .h1-about {
+    text-align: left;
   }
 }

@@ -69,6 +69,10 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
+p {
+  font-size: 1.125rem;
+}
+
 a,
 a:visited,
 a:hover {
@@ -99,6 +103,10 @@ svg:hover {
 
 .flex {
   display: flex;
+}
+
+.f-fd-col {
+  flex-direction: column;
 }
 
 body.flex {
