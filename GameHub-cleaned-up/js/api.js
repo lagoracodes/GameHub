@@ -1,6 +1,4 @@
-import { accessToken, apiKey } from "./localStorage.js";
-
-const apiUrl = "https://v2.api.noroff.dev/gamehub";
+import { accessToken, apiKey, apiURL } from "./localStorage.js";
 
 async function fetchAPIData(apiKey) {
   const options = {
@@ -11,19 +9,26 @@ async function fetchAPIData(apiKey) {
   };
 
   try {
-    const response = await fetch(apiUrl, options);
+    const response = await fetch(apiURL, options);
 
     if (!response.ok) {
       throw new Error("Failed to fetch protected data");
     }
 
-    const apiData = await response.json();
+    const results = await response.json();
 
-    return apiData.data;
-
+    return results; // Return the data
   } catch (error) {
     console.error("Error fetching api data:", error);
+    throw error;
   }
 }
 
-export const apiData = fetchAPIData(apiKey);
+export const usableData = await fetchAPIData(apiKey)
+  .then((data) => {
+    // You can use 'data' further here if needed
+    return data.data;
+  })
+  .catch((error) => {
+    console.error("Error occurred:", error);
+  });

@@ -149,88 +149,8 @@
     <main class="container">
       <section>
         <h1>Trending Games</h1>
-        <div class="flex f-jc-c f-ai-c">
-          <div class="game-card flex">
-            <div class="img-wrapper">
-              <img
-                class="game-picture"
-                src="/resources/images/games/GameHub_covers10.jpg"
-                alt="forge legend video game cover"
-              />
-            </div>
-            <div class="lower-panel">
-              <h3 class="game-title letter-spacing">forge legend</h3>
-              <div class="flex f-jc-c f-ai-c">
-                <div>
-                  <h4 class="uppercase letter-spacing">
-                    current <br />
-                    lowest price
-                  </h4>
-                  <h3 class="letter-spacing">€45.99</h3>
-                </div>
-                <button>
-                  <a class="uppercase letter-spacing" href="#"
-                    >browse <br />
-                    sellers</a
-                  >
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="game-card flex">
-            <div class="img-wrapper">
-              <img
-                class="game-picture"
-                src="/resources/images/games/GameHub_covers9.jpg"
-                alt="cyberpunk video game cover"
-              />
-            </div>
-            <div class="lower-panel">
-              <h3 class="game-title letter-spacing">cyberpunk</h3>
-              <div class="flex f-jc-c f-ai-c">
-                <div>
-                  <h4 class="uppercase letter-spacing">
-                    current <br />
-                    lowest price
-                  </h4>
-                  <h3 class="letter-spacing">€28.99</h3>
-                </div>
-                <button>
-                  <a class="uppercase letter-spacing" href="#"
-                    >browse <br />
-                    sellers</a
-                  >
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="game-card flex">
-            <div class="img-wrapper">
-              <img
-                class="game-picture"
-                src="/resources/images/games/GameHub_covers6.jpg"
-                alt="space war video game cover"
-              />
-            </div>
-            <div class="lower-panel">
-              <h3 class="game-title letter-spacing">space war</h3>
-              <div class="flex f-jc-c f-ai-c">
-                <div>
-                  <h4 class="uppercase letter-spacing">
-                    current <br />
-                    lowest price
-                  </h4>
-                  <h3 class="letter-spacing">€18.99</h3>
-                </div>
-                <button>
-                  <a class="uppercase letter-spacing" href="#"
-                    >browse <br />
-                    sellers</a
-                  >
-                </button>
-              </div>
-            </div>
-          </div>
+        <div id="trending-games" class="flex f-jc-c">
+          <div id="loading-circle" class="loader"></div>
         </div>
       </section>
       <section>
@@ -669,5 +589,6 @@
       </div>
     </footer>
     <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/trendingGames.js"></script>
   </body>
 </html>

@@ -36,12 +36,19 @@
 }
 
 .lower-panel {
+  width: 100%;
   padding-bottom: 0.8rem;
 }
 
 .game-title {
   margin-bottom: 0.4rem;
   text-transform: capitalize;
+  white-space: nowrap;
+  overflow-wrap: break-word;
+}
+
+.lower-panel .game-title {
+  font-size: clamp(14px, 3vw, 24px);
 }
 
 .game-card .flex {
@@ -146,6 +153,30 @@ button:hover {
   font-style: italic;
 }
 
+/* loading circle */
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid;
+  border-color: rgba(255, 255, 255, 0.521) transparent;
+  border-radius: 50%;
+  box-shadow: 3px 3px 7px rgba(69, 43, 185, 0.1),
+    -3px -3px 7px rgba(131, 33, 170, 0.1);
+  /* display: inline-block; */
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .flex:has(.game-card) {
     flex-direction: column;
@@ -173,11 +204,12 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(3, 272px);
     gap: 1.25rem;
+    justify-items: center;
   }
 
   /* games */
 
-  #all-games .grid-wrapper {
+  #all-games.grid-wrapper {
     grid-template-columns: repeat(3, 16.25rem);
     column-gap: 3rem;
     row-gap: 5rem;
