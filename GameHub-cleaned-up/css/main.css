@@ -1,13 +1,13 @@
-.game-card {
+/* .game-card {
   position: relative;
   flex-shrink: 0;
   width: 16.25rem;
-  height: 28.5rem;
+  height: 30rem;
   border-radius: 40px;
   box-shadow: 3px 3px 7px rgba(69, 43, 185, 0.1),
     -3px -3px 7px rgba(131, 33, 170, 0.1);
   background-color: rgba(129, 106, 224, 13%);
-}
+} */
 
 .game-card.flex {
   flex-direction: column;
@@ -22,8 +22,7 @@
 .img-wrapper {
   position: relative;
   width: 16.25rem;
-  height: 23rem;
-  border-radius: 40px 40px 0 0;
+  height: 20.860625rem;
   overflow: hidden;
 }
 
@@ -31,29 +30,40 @@
   position: absolute;
   width: 100%;
   height: auto;
+  border-radius: 40px 40px 0 0;
   /* object-fit:contain; */
   object-position: 0px 0px;
 }
 
 .lower-panel {
-  width: 100%;
-  padding-bottom: 0.8rem;
+  display: flex;
+  width: 16.25rem;
+  height: 13rem;
+  border-radius: 0 0 40px 40px;
+  flex-direction: column;
+  /* padding-bottom: 0.8rem; */
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  box-shadow: 3px 3px 7px rgba(69, 43, 185, 0.1),
+    -3px -3px 7px rgba(131, 33, 170, 0.1);
+  background-color: rgba(129, 106, 224, 13%);
 }
 
 .game-title {
   margin-bottom: 0.4rem;
   text-transform: capitalize;
-  white-space: nowrap;
-  overflow-wrap: break-word;
+  /* white-space: nowrap; */
+  /* overflow-wrap: break-word; */
 }
 
-.lower-panel .game-title {
-  font-size: clamp(14px, 3vw, 24px);
-}
+/* .lower-panel .game-title {
+  font-size: clamp(18px, 3vw, 24px);
+} */
 
-.game-card .flex {
-  height: 4rem;
-  gap: 1rem;
+.game-card .lower-panel.flex {
+  gap: 0.75rem;
 }
 
 .game-card h4 {
@@ -75,22 +85,73 @@
   letter-spacing: 0.05rem;
 }
 
-button {
-  width: 7rem;
-  height: 3rem;
+.btn-1 {
+  display: inline-block;
+  width: 6rem;
+  height: 2.8rem;
   border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  background-color: rgba(94, 118, 255, 0.24);
+}
+
+.btn-1:hover {
+  transform: scale(1.02);
+  background-color: #3753f58e;
+  box-shadow: 0px 0px 15px rgba(16, 14, 136, 0.281);
+  color: #fff;
+}
+
+.btn-span {
+  text-align: center;
+  font-size: 10.5px;
+  font-weight: 400;
+}
+
+.btn-1 span.letter-spacing {
+  letter-spacing: 0.15rem;
+}
+
+/* .btn-1:hover span {
+    letter-spacing: 0.16rem;
+} */
+
+.gap {
+  gap: 20px;
+}
+
+.btn-2 {
+  display: inline-block;
+  width: 100%;
+  height: 2.5rem;
+  /* border-radius: 30px; */
   cursor: pointer;
   border: none;
   font-family: "Roboto", sans-serif;
   font-size: 0.7em;
   font-weight: 500;
-  background-color: rgba(94, 118, 255, 0.24);
+  background-color: rgba(86, 93, 134, 0.178);
 }
 
-button:hover {
-  background-color: #3753f58e;
-  box-shadow: 3px 3px 7px rgba(45, 43, 179, 0.308);
+.btn-2:hover {
+  background-color: rgba(86, 99, 172, 0.329);
   color: #fff;
+}
+
+.btn-2 span.letter-spacing {
+  letter-spacing: 0.4rem;
+}
+
+.btn-2:hover span {
+  font-size: 11px;
+  letter-spacing: 0.45rem;
+}
+
+.margin {
+  /* border: 2px dotted yellow; */
+  margin-top: -18px;
+  margin-bottom: -5px;
 }
 
 .seller-card {
