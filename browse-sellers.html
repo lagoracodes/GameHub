@@ -150,64 +150,70 @@
       <section>
         <h1>Browse Sellers</h1>
         <div class="flex fd-col">
-          <div class="sort">
-            <div class="sort-box sb-1">
-              <div class="three-lines"></div>
-              <div class="three-lines"></div>
-              <div class="three-lines"></div>
-            </div>
-            <div class="sort-box sb-2">
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-            </div>
-            <div class="sort-box sb-3">
-              <div class="flex sb-3-1">
-                <p class="p-sort-by">sort by</p>
-                <svg
-                  class="arrow-down"
-                  width="800"
-                  height="800"
-                  viewBox="0 -4.5 20 20"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g
-                    id="Page-1"
-                    stroke="none"
-                    stroke-width="1"
-                    fill="none"
-                    fill-rule="evenodd"
-                  >
-                    <g
-                      id="Dribbble-Light-Preview"
-                      transform="translate(-220.000000, -6684.000000)"
-                      fill="#000000"
-                    >
-                      <g
-                        id="icons"
-                        transform="translate(56.000000, 160.000000)"
-                      >
-                        <path
-                          fill="#d9d9d9"
-                          d="M164.292 6524.366c-.39.404-.39 1.06 0 1.464l8.264 8.562c.78.81 2.047.81 2.827 0l8.325-8.624c.385-.4.39-1.048.01-1.454a.976.976 0 0 0-1.425-.011l-7.617 7.893a.975.975 0 0 1-1.414 0l-7.557-7.83a.974.974 0 0 0-1.413 0"
-                          id="arrow_down-[#338]"
+          <section id="browse-sellers" class="flex fd-col f-jc-c f-ai-c">
+            <div id="loading-circle" class="loader"></div>
+            <div class="browse-bg flex f-ai-c f-jc-c">
+              <div class="flex gap f-jc-sb">
+                <div class="flex fd-col f-jc-c gap">
+                  <div id="seller-info" class="flex gap">
+                    <img
+                      class="img"
+                      src="/resources/images/avatars/avatar-1.png"
+                      alt="seller image"
+                    />
+                    <div>
+                      <div class="flex">
+                        <h4 class="uppercase letter-spacing">aegyptiaca</h4>
+                        <img
+                          class="verified"
+                          src="/resources/images/icons/verified.png"
+                          alt="verified icon"
                         />
-                      </g>
-                    </g>
-                  </g>
-                </svg>
+                      </div>
+                      <h5 class="uppercase letter-spacing">riga, latvia</h5>
+                      <div class="flex">
+                        <img
+                          class="star-icon"
+                          src="/resources/images/icons/gold-star.png"
+                          alt="gold star icon"
+                        />
+                        <img
+                          class="star-icon"
+                          src="/resources/images/icons/gold-star.png"
+                          alt="gold star icon"
+                        />
+                        <img
+                          class="star-icon"
+                          src="/resources/images/icons/gold-star.png"
+                          alt="gold star icon"
+                        />
+                        <img
+                          class="star-icon"
+                          src="/resources/images/icons/gold-star.png"
+                          alt="gold star icon"
+                        />
+                        <img
+                          class="star-icon"
+                          src="/resources/images/icons/gold-star.png"
+                          alt="gold star icon"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex gap">
+                    <div class="btn-price flex f-jc-c f-ai-c">€28.99</div>
+                    <div class="btn-cart flex f-jc-c f-ai-c">ADD TO CART</div>
+                  </div>
+                </div>
+                <div id="game-info" class="flex">
+                  <img
+                    class="img"
+                    src="/resources/images/games/GameHub_covers10.jpg"
+                    alt="video game cover"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <section id="browse-sellers" class="flex f-jc-c f-ai-c">
-            <div id="loading-circle" class="loader"></div>
           </section>
         </div>
       </section>

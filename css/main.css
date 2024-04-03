@@ -168,16 +168,18 @@
     -3px -3px 7px rgba(166, 33, 170, 0.26);
 } */
 
-.seller-card h4 {
+#seller-info h4 {
   font-size: 0.95rem;
   margin-right: 0.13rem;
+  letter-spacing: 0.15rem;
 }
 
-.seller-card h5 {
-  font-size: 0.75rem;
+#seller-info h5 {
+  font-size: 0.8rem;
   font-weight: 300;
   width: 144px;
   margin-bottom: 0.12rem;
+  letter-spacing: 0.15rem;
 }
 
 .seller-card .img {
