@@ -39,7 +39,7 @@ for (let i = 0; i < usableData.length; i++) {
               </h4>
               <h3 class="letter-spacing">${price}</h3>
             </div>
-            <a class="btn-1 flex f-ai-c f-jc-c" href="#">
+            <a id="browse-sellers-btn" class="btn-1 flex f-ai-c f-jc-c" href="#">
                 <span class="btn-span uppercase letter-spacing">browse <br />
                 sellers</span>
               </a>
