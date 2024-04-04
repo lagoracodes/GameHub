@@ -231,6 +231,47 @@
   animation: rotation 1s linear infinite;
 }
 
+/* contact */
+
+.contact-bg {
+  width: 100vw;
+  height: 20rem;
+  background-color: rgba(166, 153, 247, 10%);
+}
+
+#contact h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+#contact p {
+  font-size: 0.85rem;
+  font-weight: 300;;
+}
+
+#contact p,
+#contact h3 {
+  letter-spacing: 0.025rem;
+}
+
+#contact .marg {
+  margin: 0 0 3rem 0;
+}
+
+#contact section.gap {
+  gap: 10rem;
+}
+
+.contact-form {
+  width: 20rem;
+  height: 1.55rem;
+  border-radius: 5px;
+}
+
+.msg {
+  height: 5rem;
+}
+
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
