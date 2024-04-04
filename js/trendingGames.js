@@ -27,8 +27,7 @@ for (let i = 0; i < usableData.length; i++) {
         />
       </div>
         <div class="flex lower-panel">
-          <h3 id="game-title" class="game-title letter-spacing">${gameTitle}</h3>
-      
+          <h3 class="game-title letter-spacing">${gameTitle}</h3>
               <a class="btn-2 flex f-ai-c f-jc-c" href="#">
                 <span class="btn-span uppercase letter-spacing">game info</span>
               </a>

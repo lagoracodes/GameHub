@@ -168,13 +168,13 @@
     -3px -3px 7px rgba(166, 33, 170, 0.26);
 } */
 
-#seller-info h4 {
+.seller-card h4 {
   font-size: 0.95rem;
   margin-right: 0.13rem;
   letter-spacing: 0.15rem;
 }
 
-#seller-info h5 {
+.seller-card h5 {
   font-size: 0.8rem;
   font-weight: 300;
   width: 144px;
@@ -272,7 +272,7 @@
 
   /* games */
 
-  #all-games.grid-wrapper {
+  .all-games.grid-wrapper {
     grid-template-columns: repeat(3, 16.25rem);
     column-gap: 3rem;
     row-gap: 5rem;
