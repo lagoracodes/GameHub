@@ -1,4 +1,5 @@
+import { chosenGame } from "./allGames.js";
 
-const loadingCircle = document.querySelector("#loading-circle");
+console.log(chosenGame);
 
-
+// const loadingCircle = document.querySelector("#loading-circle");

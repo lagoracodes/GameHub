@@ -1,27 +1,31 @@
 import { usableData } from "./api.js";
 
+const chosenGame = [];
+
 const allGames = document.querySelector("#all-games");
 const loadingCircle = document.querySelector("#loading-circle");
 
 console.log(usableData);
 for (let i = 0; i < usableData.length; i++) {
-  const imgUrl = usableData[i].image.url;
-  const gameTitle = usableData[i].title;
-  const price = usableData[i].discountedPrice;
   const gameID = usableData[i].id;
-
-  // console.log(gameTitle);
+  const gameTitle = usableData[i].title;
+  const gameImg = usableData[i].image.url;
+  const gamePrice = usableData[i].discountedPrice;
+  const gameFavorite = usableData[i].favorite;
+  const gameAgeRating = usableData[i].ageRating;
+  const gameDescription = usableData[i].description;
+  const gameReleaseYear = usableData[i].released;
 
   loadingCircle.remove();
   allGames.classList.remove("flex");
   allGames.classList.add("grid-wrapper");
 
   allGames.innerHTML += `
-    <div class="game-card flex f-ai-c">
+    <div class="game-card flex f-ai-c" data-id="${gameID}" data-title="${gameTitle}" data-img="${gameImg}" data-price="${gamePrice}" data-favorite="${gameFavorite}" data-age="${gameAgeRating}" data-description="${gameDescription}" data-released="${gameReleaseYear}">
       <div class="img-wrapper">
         <img
           class="game-picture"
-          src= ${imgUrl}
+          src= ${gameImg}
           alt="video game cover picture"
         />
       </div>
@@ -38,7 +42,7 @@ for (let i = 0; i < usableData.length; i++) {
                 current <br />
                 lowest price
               </h4>
-              <h3 class="game-price letter-spacing">${price}</h3>
+              <h3 class="game-price letter-spacing">${gamePrice}</h3>
             </div>
             <a class="btn-1 flex f-ai-c f-jc-c browse-sellers-btn" href="./browse-sellers.html">
                 <span class="btn-span uppercase letter-spacing">browse <br />
@@ -56,28 +60,47 @@ for (let i = 0; i < usableData.length; i++) {
   } else {
     continue;
   }
-
-  // browseSellersBtn.forEach(function (button) {
-  //   button.addEventListener("mouseover", function () {
-  //     const gameCard = button.closest(".game-card");
-  //     const gameTitle = gameCard.querySelector(".game-title").innerText;
-  //     // const gameID = gameCard.dataset.gameId;
-  //     console.log("User clicked on: ", gameTitle, " ID: ");
-  //   });
-  // });
 }
 
-const browseSellersBtn = document.querySelectorAll(".browse-sellers-btn");
+function handleClickEvent(event) {
+  const button = event.target;
+  const gameCard = button.closest(".game-card");
 
-browseSellersBtn.forEach(function (button) {
-  button.addEventListener(
-    "mouseover",
-    function (e) {
-      const gameCard = button.closest(".game-card");
-      const gameTitle = gameCard.querySelector(".game-title").innerText;
-      const gameID = gameCard.dataset.gameId;
-      console.log("User clicked on: ", gameTitle, " ID: ", gameCard);
-    },
-    false
-  );
+  const gameID = gameCard.dataset.id;
+  const gameTitle = gameCard.dataset.title;
+  const gameImg = gameCard.dataset.img;
+  const gamePrice = gameCard.dataset.price;
+  const gameFavorite = gameCard.dataset.favorite;
+  const gameAgeRating = gameCard.dataset.age;
+  const gameDescription = gameCard.dataset.description;
+  const gameReleaseYear = gameCard.dataset.released;
+
+  const gameInfo = {
+    id: gameID,
+    title: gameTitle,
+    img: gameImg,
+    price: gamePrice,
+    favorite: gameFavorite,
+    ageRating: gameAgeRating,
+    description: gameDescription,
+    released: gameReleaseYear,
+  };
+
+  addToChosenGame(gameInfo);
+}
+
+function addToChosenGame(game) {
+  chosenGame.length = 0;
+  chosenGame.push(game);
+  return chosenGame;
+}
+
+const browseSellerBtn = document.querySelectorAll(".browse-sellers-btn");
+
+browseSellerBtn.forEach((button) => {
+  button.addEventListener("click", handleClickEvent);
 });
+
+export { chosenGame };
+
+// });
