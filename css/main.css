@@ -197,12 +197,29 @@
 
 /* about */
 
+#about section:first-child p {
+  width: 45rem;
+}
+
 #reviews {
   width: 100vw;
   gap: 5rem;
   margin-left: -11.25rem;
   padding: 5rem 0;
   background-color: #d9d9d908;
+}
+
+#reviews > div {
+  margin-top: -2rem;
+  padding-bottom: 1rem;
+}
+
+#reviews p:first-child {
+  padding-bottom: 0.5rem;
+}
+
+#reviews ul {
+  gap: 2rem;
 }
 
 #reviews li {
@@ -246,7 +263,7 @@
 
 #contact p {
   font-size: 0.85rem;
-  font-weight: 300;;
+  font-weight: 300;
 }
 
 #contact p,
