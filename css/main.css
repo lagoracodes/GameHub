@@ -340,4 +340,8 @@
   .h1-about {
     text-align: left;
   }
+
+  #loading-circle.marg {
+    margin: 0 0 3rem 0;
+  }
 }

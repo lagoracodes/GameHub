@@ -4,7 +4,7 @@
 
 .browse-bg {
   width: 50rem;
-  height: 13rem;
+  height: 13.5rem;
   border-radius: 40px;
   background-color: rgba(129, 106, 224, 13%);
   /* border: 3px dotted magenta; */
@@ -15,16 +15,16 @@
   padding: 0 1.5rem;
 }
 
-#game-info .divider-line {
+.game-info .divider-line {
   height: 9rem;
 }
 
-#game-info .img {
+.game-info .img {
   width: 8.8rem;
   border-radius: 30px;
 }
 
-#game-info p {
+.game-info p {
   font-family: "Inter", sans-serif;
   font-size: 0.9rem;
   letter-spacing: 0.05rem;

@@ -186,6 +186,10 @@ body.flex {
   z-index: -1;
 }
 
+.hide {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   h1 {
     font-size: 2.5em; /* 48px */

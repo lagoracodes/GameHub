@@ -2,26 +2,32 @@ import { usableData } from "./api.js";
 
 const chosenGame = [];
 
+const allGamesCon = document.querySelector("#all-games-con");
 const allGames = document.querySelector("#all-games");
 const loadingCircle = document.querySelector("#loading-circle");
+const sort = document.querySelector("#sort");
 
 console.log(usableData);
-for (let i = 0; i < usableData.length; i++) {
-  const gameID = usableData[i].id;
-  const gameTitle = usableData[i].title;
-  const gameImg = usableData[i].image.url;
-  const gamePrice = usableData[i].discountedPrice;
-  const gameFavorite = usableData[i].favorite;
-  const gameAgeRating = usableData[i].ageRating;
-  const gameDescription = usableData[i].description;
-  const gameReleaseYear = usableData[i].released;
 
+if (usableData) {
   loadingCircle.remove();
-  allGames.classList.remove("flex");
-  allGames.classList.add("grid-wrapper");
+  sort.classList.remove("hide");
+  for (let i = 0; i < usableData.length; i++) {
+    const gameID = usableData[i].id;
+    const gameTitle = usableData[i].title;
+    const gameImg = usableData[i].image.url;
+    const gameGenre = usableData[i].genre;
+    const gamePrice = usableData[i].discountedPrice;
+    const gameFavorite = usableData[i].favorite;
+    const gameAgeRating = usableData[i].ageRating;
+    const gameDescription = usableData[i].description;
+    const gameReleaseYear = usableData[i].released;
 
-  allGames.innerHTML += `
-    <div class="game-card flex f-ai-c" data-id="${gameID}" data-title="${gameTitle}" data-img="${gameImg}" data-price="${gamePrice}" data-favorite="${gameFavorite}" data-age="${gameAgeRating}" data-description="${gameDescription}" data-released="${gameReleaseYear}">
+    allGames.classList.remove("flex");
+    allGames.classList.add("grid-wrapper");
+
+    allGames.innerHTML += `
+    <div class="game-card flex f-ai-c" data-id="${gameID}" data-title="${gameTitle}" data-img="${gameImg}" data-price="${gamePrice}" data-favorite="${gameFavorite}" data-age="${gameAgeRating}" data-description="${gameDescription}" data-released="${gameReleaseYear}" data-genre=${gameGenre}>
       <div class="img-wrapper">
         <img
           class="game-picture"
@@ -53,13 +59,23 @@ for (let i = 0; i < usableData.length; i++) {
     </div>
       `;
 
-  const gameTitleH3 = document.querySelectorAll(".game-title");
+    const gameTitleH3 = document.querySelectorAll(".game-title");
 
-  if (gameTitleH3[i].innerText.length >= 20) {
-    gameTitleH3[i].classList.add("margin");
-  } else {
-    continue;
+    if (gameTitleH3[i].innerText.length >= 20) {
+      gameTitleH3[i].classList.add("margin");
+    } else {
+      continue;
+    }
   }
+} else {
+  sort.remove();
+  allGamesCon.innerHTML += `
+                        <div class="flex fd-col f-ai-c"><h3>UNABLE TO RETRIEVE DATA</h3>
+                        <p>(we are working to fix the issue, please come back later)</p></div>`;
+}
+
+if (localStorage.getItem("chosenGame")) {
+  localStorage.removeItem("chosenGame");
 }
 
 function handleClickEvent(event) {
@@ -70,37 +86,38 @@ function handleClickEvent(event) {
   const gameTitle = gameCard.dataset.title;
   const gameImg = gameCard.dataset.img;
   const gamePrice = gameCard.dataset.price;
+  const gameGenre = gameCard.dataset.genre;
   const gameFavorite = gameCard.dataset.favorite;
   const gameAgeRating = gameCard.dataset.age;
   const gameDescription = gameCard.dataset.description;
-  const gameReleaseYear = gameCard.dataset.released;
+  const gameYear = gameCard.dataset.released;
 
   const gameInfo = {
     id: gameID,
     title: gameTitle,
     img: gameImg,
     price: gamePrice,
+    genre: gameGenre,
     favorite: gameFavorite,
     ageRating: gameAgeRating,
     description: gameDescription,
-    released: gameReleaseYear,
+    released: gameYear,
   };
 
-  addToChosenGame(gameInfo);
+  chosenGame.length = 0;
+  chosenGame.push(gameInfo);
+
+  localStorage.setItem("chosenGame", JSON.stringify(chosenGame));
 }
 
-function addToChosenGame(game) {
-  chosenGame.length = 0;
-  chosenGame.push(game);
-  return chosenGame;
-}
+// const addToChosenGame = (game) => {
+//   chosenGame.length = 0;
+//   chosenGame.push(game);
+//   return chosenGame;
+// };
 
 const browseSellerBtn = document.querySelectorAll(".browse-sellers-btn");
 
 browseSellerBtn.forEach((button) => {
   button.addEventListener("click", handleClickEvent);
 });
-
-export { chosenGame };
-
-// });

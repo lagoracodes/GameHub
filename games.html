@@ -155,8 +155,9 @@
     <main class="container">
       <section>
         <h1>Browse All Games</h1>
-        <div class="flex fd-col">
-          <div class="sort">
+        <div id="all-games-con" class="flex fd-col f-ai-c">
+          <div id="loading-circle" class="loader marg"></div>
+          <div id="sort" class="sort hide">
             <div class="sort-box sb-1">
               <div class="three-lines"></div>
               <div class="three-lines"></div>
@@ -212,9 +213,7 @@
               </div>
             </div>
           </div>
-          <div id="all-games" class="flex f-jc-c">
-            <div id="loading-circle" class="loader"></div>
-          </div>
+          <div id="all-games" class="flex f-jc-c"></div>
         </div>
       </section>
     </main>
@@ -378,6 +377,6 @@
       </div>
     </footer>
     <script type="module" src="js/script.js"></script>
-    <script type="module" src="/js/allGames.js"></script>
+    <script type="module" src="js/allGames.js"></script>
   </body>
 </html>
