@@ -1,4 +1,5 @@
 import { usableData } from "./api.js";
+import { showGameInfo } from "./show-game-info.js";
 
 const chosenGame = [];
 
@@ -38,7 +39,7 @@ if (usableData) {
       </div>
         <div class="flex lower-panel">
           <h3 class="game-title letter-spacing">${gameTitle}</h3>
-              <a class="btn-2 flex f-ai-c f-jc-c" href="#">
+              <a class="btn-2 flex f-ai-c f-jc-c game-info-btn" href="#">
                 <span class="btn-span uppercase letter-spacing">game info</span>
               </a>
 
@@ -100,13 +101,13 @@ function handleClickEvent(event) {
   chosenGame.length = 0;
   chosenGame.push(gameInfo);
 
-  console.log(chosenGame);
-
   localStorage.setItem("chosenGame", JSON.stringify(chosenGame));
 }
 
 const browseSellerBtn = document.querySelectorAll(".browse-sellers-btn");
 
 browseSellerBtn.forEach((button) => {
-  button.addEventListener("mouseover", handleClickEvent);
+  button.addEventListener("click", handleClickEvent);
 });
+
+showGameInfo();

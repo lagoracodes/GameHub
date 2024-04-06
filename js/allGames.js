@@ -1,4 +1,5 @@
 import { usableData } from "./api.js";
+import { showGameInfo } from "./show-game-info.js";
 
 const chosenGame = [];
 
@@ -6,8 +7,6 @@ const allGamesCon = document.querySelector("#all-games-con");
 const allGames = document.querySelector("#all-games");
 const loadingCircle = document.querySelector("#loading-circle");
 const sort = document.querySelector("#sort");
-
-console.log(usableData);
 
 if (usableData) {
   loadingCircle.remove();
@@ -110,14 +109,10 @@ function handleClickEvent(event) {
   localStorage.setItem("chosenGame", JSON.stringify(chosenGame));
 }
 
-// const addToChosenGame = (game) => {
-//   chosenGame.length = 0;
-//   chosenGame.push(game);
-//   return chosenGame;
-// };
-
 const browseSellerBtn = document.querySelectorAll(".browse-sellers-btn");
 
 browseSellerBtn.forEach((button) => {
   button.addEventListener("click", handleClickEvent);
 });
+
+showGameInfo();

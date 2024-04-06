@@ -17,12 +17,21 @@ const gameYear = chosenGame[0].released;
 
 if (sellers) {
   loadingCircle.remove();
-  for (let i = 0; i < sellers.length; i++) {
-    // console.log(gameTitle);
 
+  let sellerPrice;
+
+  for (let i = 0; i < sellers.length; i++) {
     const sellerName = sellers[i].name;
     const sellerLocation = sellers[i].location;
     const sellerImg = sellers[i].img;
+
+    if (sellers[i] === sellers[0]) {
+      sellerPrice = parseFloat(gamePrice);
+    } else {
+      sellerPrice *= 1.05;
+    }
+
+    const finalSellerPrice = sellerPrice.toFixed(2);
 
     browseSellers.innerHTML += `<div class="browse-bg flex f-ai-c f-jc-c">
                 <div class="flex gap f-jc-sb">
@@ -89,7 +98,7 @@ if (sellers) {
                     </div>
                     <div class="buttons flex">
                       <div class="btn-sellers price flex f-jc-c f-ai-c">
-                        €28.99
+                        ${finalSellerPrice}
                       </div>
                       <div class="btn-sellers cart flex f-jc-c f-ai-c">
                         ADD TO CART
