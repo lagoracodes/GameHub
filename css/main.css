@@ -35,6 +35,11 @@
   object-position: 0px 0px;
 }
 
+.game-cover {
+  width: 8.8rem;
+  border-radius: 30px;
+}
+
 .lower-panel {
   display: flex;
   width: 16.25rem;
@@ -185,10 +190,12 @@
 
 .verified {
   transform: scale(0.8);
+  z-index: -1;
 }
 
 .star-icon {
   transform: scale(0.85);
+  z-index: -1;
 }
 
 /* about */

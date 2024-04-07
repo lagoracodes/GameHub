@@ -93,8 +93,12 @@ header > nav {
     flex-basis: 33%;
   }
 
+  .desktop-right {
+    justify-content: center;
+  }
+
   .logo {
-    width: 12rem;
+    width: 11rem;
     height: auto;
   }
 

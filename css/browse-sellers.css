@@ -3,8 +3,6 @@
 }
 
 .browse-bg {
-  width: 50rem;
-  height: 13.5rem;
   border-radius: 40px;
   background-color: rgba(129, 106, 224, 13%);
   /* border: 3px dotted magenta; */
@@ -13,10 +11,6 @@
 .browse-bg > .flex {
   width: 100%;
   padding: 0 1.5rem;
-}
-
-.game-info .divider-line {
-  height: 9rem;
 }
 
 .game-info .img {
@@ -60,4 +54,47 @@
 
 .btn-span {
   font-size: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+  .browse-bg {
+    width: 21.9375rem;
+    padding: 3rem 0 4rem;
+  }
+
+  .browse-bg > .flex:first-child,
+  .game-info.flex {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .seller-info.flex,
+  .seller-info + .buttons {
+    justify-content: center;
+    align-items: center;
+  }
+
+  #browse-sellers p {
+    text-align: center;
+  }
+
+  .seller-info-con.flex {
+    gap: 2rem;
+  }
+
+  #browse-sellers .divider-line {
+    width: 9rem;
+    height: 1px;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .browse-bg {
+    width: 50rem;
+    height: 13.5rem;
+  }
+
+  .game-info .divider-line {
+    height: 9rem;
+  }
 }

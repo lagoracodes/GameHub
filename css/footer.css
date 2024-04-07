@@ -32,6 +32,12 @@ footer .flex div p {
   font-size: 0.725rem;
 }
 
+.divider-line {
+  width: 1px;
+  height: 85px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
 @media only screen and (max-width: 600px) {
   .footer-top-row > .flex {
     flex-direction: column;
@@ -50,6 +56,10 @@ footer .flex div p {
 
   .social-media-icons h4 {
     text-align: center;
+  }
+
+  footer .divider-line {
+    display: none;
   }
 }
 
@@ -85,11 +95,5 @@ footer .flex div p {
   .social-media-icons svg {
     width: 1.8rem;
     height: auto;
-  }
-
-  .divider-line {
-    width: 1px;
-    height: 85px;
-    background-color: rgba(255, 255, 255, 0.12);
   }
 }

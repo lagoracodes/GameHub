@@ -9,12 +9,14 @@
 .shopping-cart,
 .info-con {
   width: 90%;
+  min-width: 500px;
   max-width: 800px;
   border-radius: 50px;
   background-color: rgba(217, 217, 217, 0.1);
 }
 
 .shopping-cart > div:first-child {
+  width: 100%;
   padding: 2rem 3rem;
 }
 
@@ -34,11 +36,6 @@
 .shopping-cart .divider-line {
   width: 100%;
   height: 1px;
-}
-
-.game-cover {
-  width: 8.8rem;
-  border-radius: 30px;
 }
 
 #check-out .seller-card {
@@ -108,4 +105,43 @@
 .game-img {
   width: 10rem;
   border-radius: 30px;
+}
+
+.check-out.gap {
+  gap: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .shopping-cart,
+  .info-con {
+    width: 90%;
+    min-width: 300px;
+    max-width: 400px;
+    border-radius: 50px;
+    background-color: rgba(217, 217, 217, 0.1);
+  }
+
+  h1 {
+    text-wrap: wrap;
+  }
+
+  .title-padding {
+    text-align: center;
+  }
+
+  .shopping-cart {
+    padding-bottom: 2rem;
+  }
+
+  .shopping-cart > div > div.gap {
+    gap: 2rem;
+  }
+
+  .check-out h5 {
+    padding-bottom: 0;
+  }
+
+  .check-out-price {
+    font-size: 1.45em;
+  }
 }

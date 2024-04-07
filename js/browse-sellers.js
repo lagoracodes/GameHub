@@ -39,7 +39,7 @@ if (sellers) {
                       src="${gameImg}"
                       alt="video game cover"
                     />
-                    <div class="divider-line hide-for-mobile-devices"></div>
+                    <div class="divider-line"></div>
                     <div>
                       <p>
                         <strong>GAME:</strong> "${gameTitle}" <br />
@@ -47,6 +47,7 @@ if (sellers) {
                         <strong>YEAR OF RELEASE:</strong> ${gameYear} <br />
                       </p>
                     </div>
+                    <div class="divider-line hide-for-desktop-devices"></div>
                   </div>
                   <div class="seller-info-con flex fd-col f-jc-c gap" data-name="${sellerName}" data-location="${sellerLocation}" data-img="${sellerImg}" data-price="${finalSellerPrice}">
                     <div class="seller-info flex gap">

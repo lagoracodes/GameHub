@@ -28,8 +28,8 @@ async function initDataRetrieval() {
 
     loadingCircle.remove();
     checkOut.innerHTML = `<div class="check-out flex fd-col gap f-ai-c">
-            <div class="shopping-cart flex fd-col f-ai-c">
-              <div>
+            <div class="shopping-cart flex fd-col f-ai-c hide-for-mobile-devices">
+              <div class="flex fd-col">
                 <h4 class="uppercase poppins title-padding">shopping cart</h4>
                 <div class="flex fd-col gap f-jc-c">
                   <div class="flex f-jc-sb gap">
@@ -40,11 +40,8 @@ async function initDataRetrieval() {
                   <div class="divider-line"></div>
                   <div class="flex f-jc-sb gap">
                     <div class="flex fd-col gap">
-                      <!-- <div>
-                      <p style="text-align: center">"${gameTitle}" <br /></p>
-                    </div> -->
                       <img
-                        class="img game-cover"
+                        class="game-cover"
                         src="${gameImg}"
                         alt="video game cover"
                       />
@@ -102,6 +99,76 @@ async function initDataRetrieval() {
                 </div>
               </div>
             </div>
+            
+            <div class="shopping-cart flex fd-col f-ai-c hide-for-desktop-devices">
+              <div>
+                <h4 class="uppercase poppins title-padding">shopping cart</h4>
+                <div class="flex fd-col gap">
+                  <div class="flex fd-col gap f-jc-c">
+                    <div class="flex fd-col gap f-ai-c">
+                      <h5 class="uppercase">1 item in the cart</h5>
+                      <div class="divider-line"></div>
+                      <img class="game-cover" src="${gameImg}" alt="video game cover" />
+                    </div>
+                  </div>
+                  <div class="flex fd-col gap f-jc-c">
+                    <div class="flex fd-col gap f-ai-c">
+                      <h5 class="uppercase">sold by</h5>
+                      <div class="divider-line"></div>
+                      <div class="seller-card flex f-jc-c" style="align-items: flex-start">
+                      <img class="img" src="${sellerImg}" alt="seller image" />
+                      <div>
+                        <div class="flex">
+                          <h4 class="uppercase letter-spacing">${sellerName}</h4>
+                          <img
+                            class="verified"
+                            src="/resources/images/icons/verified.png"
+                            alt="verified icon"
+                          />
+                        </div>
+                        <h5 class="uppercase letter-spacing">${sellerLocation}</h5>
+                        <div class="flex">
+                          <img
+                            class="star-icon"
+                            src="/resources/images/icons/gold-star.png"
+                            alt="gold star icon"
+                          />
+                          <img
+                            class="star-icon"
+                            src="/resources/images/icons/gold-star.png"
+                            alt="gold star icon"
+                          />
+                          <img
+                            class="star-icon"
+                            src="/resources/images/icons/gold-star.png"
+                            alt="gold star icon"
+                          />
+                          <img
+                            class="star-icon"
+                            src="/resources/images/icons/gold-star.png"
+                            alt="gold star icon"
+                          />
+                          <img
+                            class="star-icon"
+                            src="/resources/images/icons/gold-star.png"
+                            alt="gold star icon"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="flex fd-col gap f-jc-c">
+                    <div class="flex fd-col gap f-ai-c">
+                      <h5 class="uppercase">price</h5>
+                      <div class="divider-line"></div>
+                      <h4 class="check-out-price">€${sellerPrice}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="your-info info-con">
               <div>
                 <h4 class="uppercase poppins title-padding">
@@ -430,12 +497,11 @@ async function initDataRetrieval() {
                   total price: <br />
                   €${sellerPrice}
                 </div>
-                <a
+                <span
                   class="buy-now btn-sellers cart flex f-jc-c f-ai-c"
-                  href="./check-out.html"
                 >
                   <span class="btn-span uppercase letter-spacing">buy now</span>
-                </a>
+                </span>
               </div>
             </div>
           </div>`;
@@ -443,60 +509,60 @@ async function initDataRetrieval() {
     const buyNowBtn = document.querySelector(".buy-now");
     const checkOutCon = document.querySelector("#check-out-con");
 
-    function handleBuyNowClick(event) {
+    function handleBuyNowClick() {
       checkOutCon.innerHTML = `<div id="check-out-finished">
-  <div class="flex fd-col f-ai-c f-jc-c">
-    <svg
-        class="glow"
-      width="64px"
-      height="64px"
-      viewBox="0 0 32.00 32.00"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
-      fill="#000000"
-      stroke="#000000"
-    >
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-      <g
-        id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></g>
-      <g id="SVGRepo_iconCarrier">
-        <title>checkmark-circle</title>
-        <desc>Created with Sketch Beta.</desc>
-        <defs></defs>
-        <g
-          id="Page-1"
-          stroke-width="0.00032"
-          fill="none"
-          fill-rule="evenodd"
-          sketch:type="MSPage"
-        >
-          <g
-            id="Icon-Set"
-            sketch:type="MSLayerGroup"
-            transform="translate(-100.000000, -1139.000000)"
-            fill="#CD9DF3"
-          >
-            <path
-              d="M122.027,1148.07 C121.548,1147.79 120.937,1147.96 120.661,1148.43 L114.266,1159.51 L110.688,1156.21 C110.31,1155.81 109.677,1155.79 109.274,1156.17 C108.871,1156.54 108.85,1157.18 109.228,1157.58 L113.8,1161.8 C114.177,1162.2 114.81,1162.22 115.213,1161.84 C115.335,1161.73 122.393,1149.43 122.393,1149.43 C122.669,1148.96 122.505,1148.34 122.027,1148.07 L122.027,1148.07 Z M116,1169 C108.268,1169 102,1162.73 102,1155 C102,1147.27 108.268,1141 116,1141 C123.732,1141 130,1147.27 130,1155 C130,1162.73 123.732,1169 116,1169 L116,1169 Z M116,1139 C107.164,1139 100,1146.16 100,1155 C100,1163.84 107.164,1171 116,1171 C124.836,1171 132,1163.84 132,1155 C132,1146.16 124.836,1139 116,1139 L116,1139 Z"
-              id="checkmark-circle"
-              sketch:type="MSShapeGroup"
-            ></path>
-          </g>
-        </g>
-      </g>
-    </svg>
-    <h1>Thank you for your purchase!</h1>
-    <img class="img glow game-img" src="${gameImg}" alt="video game cover" />
-  </div>
-</div>`;
+                                <div class="flex fd-col f-ai-c f-jc-c">
+                                  <svg
+                                    class="glow"
+                                    width="64px"
+                                    height="64px"
+                                    viewBox="0 0 32.00 32.00"
+                                    version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+                                    fill="#000000"
+                                    stroke="#000000"
+                                  >
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g
+                                      id="SVGRepo_tracerCarrier"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    ></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                      <title>checkmark-circle</title>
+                                      <desc>Created with Sketch Beta.</desc>
+                                      <defs></defs>
+                                      <g
+                                        id="Page-1"
+                                        stroke-width="0.00032"
+                                        fill="none"
+                                        fill-rule="evenodd"
+                                        sketch:type="MSPage"
+                                      >
+                                        <g
+                                          id="Icon-Set"
+                                          sketch:type="MSLayerGroup"
+                                          transform="translate(-100.000000, -1139.000000)"
+                                          fill="#CD9DF3"
+                                        >
+                                          <path
+                                            d="M122.027,1148.07 C121.548,1147.79 120.937,1147.96 120.661,1148.43 L114.266,1159.51 L110.688,1156.21 C110.31,1155.81 109.677,1155.79 109.274,1156.17 C108.871,1156.54 108.85,1157.18 109.228,1157.58 L113.8,1161.8 C114.177,1162.2 114.81,1162.22 115.213,1161.84 C115.335,1161.73 122.393,1149.43 122.393,1149.43 C122.669,1148.96 122.505,1148.34 122.027,1148.07 L122.027,1148.07 Z M116,1169 C108.268,1169 102,1162.73 102,1155 C102,1147.27 108.268,1141 116,1141 C123.732,1141 130,1147.27 130,1155 C130,1162.73 123.732,1169 116,1169 L116,1169 Z M116,1139 C107.164,1139 100,1146.16 100,1155 C100,1163.84 107.164,1171 116,1171 C124.836,1171 132,1163.84 132,1155 C132,1146.16 124.836,1139 116,1139 L116,1139 Z"
+                                            id="checkmark-circle"
+                                            sketch:type="MSShapeGroup"
+                                          ></path>
+                                        </g>
+                                      </g>
+                                    </g>
+                                  </svg>
+                                  <h1>Thank you for your purchase!</h1>
+                                  <img class="img glow game-img" src="${gameImg}" alt="video game cover" />
+                                </div>
+                            </div>`;
     }
 
-    buyNowBtn.addEventListener("mouseover", handleBuyNowClick);
+    buyNowBtn.addEventListener("click", handleBuyNowClick);
   } catch (error) {
     checkOut.innerHTML += `
                         <div class="flex fd-col f-ai-c"><h3>UNABLE TO RETRIEVE DATA</h3>
