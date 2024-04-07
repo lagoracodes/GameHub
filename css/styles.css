@@ -128,10 +128,6 @@ body.flex {
   align-items: center;
 }
 
-.f-jc-r {
-  justify-content: right;
-}
-
 .grid {
   display: grid;
 }

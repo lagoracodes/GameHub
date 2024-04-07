@@ -100,9 +100,9 @@ if (sellers) {
                       <div class="btn-sellers price flex f-jc-c f-ai-c">
                         ${finalSellerPrice}
                       </div>
-                      <div class="btn-sellers cart flex f-jc-c f-ai-c">
-                        ADD TO CART
-                      </div>
+                      <a class="btn-sellers cart flex f-jc-c f-ai-c" href="./check-out.html">
+                <span class="btn-span uppercase letter-spacing">ADD TO CART</span>
+              </a>
                     </div>
                   </div>
                 </div>
