@@ -106,7 +106,12 @@ function handleClickEvent(event) {
   chosenGame.length = 0;
   chosenGame.push(gameInfo);
 
-  localStorage.setItem("chosenGame", JSON.stringify(chosenGame));
+  if (localStorage.getItem("chosenGame")) {
+    localStorage.removeItem("chosenGame");
+    localStorage.setItem("chosenGame", JSON.stringify(chosenGame));
+  } else {
+    localStorage.setItem("chosenGame", JSON.stringify(chosenGame));
+  }
 }
 
 const browseSellerBtn = document.querySelectorAll(".browse-sellers-btn");

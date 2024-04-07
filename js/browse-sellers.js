@@ -1,10 +1,8 @@
 import { sellers } from "./sellers.js";
 
+const chosenSeller = [];
 const chosenGameJSON = localStorage.getItem("chosenGame");
 const chosenGame = JSON.parse(chosenGameJSON);
-
-console.log(chosenGame);
-// console.log(sellers);
 
 const browseSellers = document.querySelector("#browse-sellers");
 const loadingCircle = document.querySelector("#loading-circle");
@@ -50,7 +48,7 @@ if (sellers) {
                       </p>
                     </div>
                   </div>
-                  <div class="flex fd-col f-jc-c gap">
+                  <div class="seller-info-con flex fd-col f-jc-c gap" data-name="${sellerName}" data-location="${sellerLocation}" data-img="${sellerImg}" data-price="${finalSellerPrice}">
                     <div class="seller-info flex gap">
                       <img
                         class="img"
@@ -100,7 +98,7 @@ if (sellers) {
                       <div class="btn-sellers price flex f-jc-c f-ai-c">
                         ${finalSellerPrice}
                       </div>
-                      <a class="btn-sellers cart flex f-jc-c f-ai-c" href="./check-out.html">
+                      <a class="add-to-cart-btn btn-sellers cart flex f-jc-c f-ai-c" href="./check-out.html">
                 <span class="btn-span uppercase letter-spacing">ADD TO CART</span>
               </a>
                     </div>
@@ -114,3 +112,36 @@ if (sellers) {
                             <div class="flex fd-col f-ai-c"><h3>UNABLE TO RETRIEVE DATA</h3>
                             <p>(we are working to fix the issue, please come back later)</p></div>`;
 }
+
+const addToCartBtn = document.querySelectorAll(".add-to-cart-btn");
+
+function handleClickEvent(event) {
+  const button = event.target;
+  const sellerCard = button.closest(".seller-info-con");
+
+  const sellerName = sellerCard.dataset.name;
+  const sellerLocation = sellerCard.dataset.location;
+  const sellerImg = sellerCard.dataset.img;
+  const sellerPrice = sellerCard.dataset.price;
+
+  const sellerInfo = {
+    name: sellerName,
+    location: sellerLocation,
+    img: sellerImg,
+    price: sellerPrice,
+  };
+
+  chosenSeller.length = 0;
+  chosenSeller.push(sellerInfo);
+
+  if (localStorage.getItem("chosenSeller")) {
+    localStorage.removeItem("chosenSeller");
+    localStorage.setItem("chosenSeller", JSON.stringify(chosenSeller));
+  } else {
+    localStorage.setItem("chosenSeller", JSON.stringify(chosenSeller));
+  }
+}
+
+addToCartBtn.forEach((button) => {
+  button.addEventListener("click", handleClickEvent);
+});

@@ -6,8 +6,6 @@ const chosenGame = [];
 const trendingGames = document.querySelector("#trending-games");
 const loadingCircle = document.querySelector("#loading-circle");
 
-console.log(usableData);
-
 if (usableData) {
   loadingCircle.remove();
 
@@ -68,10 +66,6 @@ if (usableData) {
                         <p>(we are working to fix the issue, please come back later)</p></div>`;
 }
 
-if (localStorage.getItem("chosenGame")) {
-  localStorage.removeItem("chosenGame");
-}
-
 function handleClickEvent(event) {
   const button = event.target;
   const gameCard = button.closest(".game-card");
@@ -101,12 +95,17 @@ function handleClickEvent(event) {
   chosenGame.length = 0;
   chosenGame.push(gameInfo);
 
-  localStorage.setItem("chosenGame", JSON.stringify(chosenGame));
+  if (localStorage.getItem("chosenGame")) {
+    localStorage.removeItem("chosenGame");
+    localStorage.setItem("chosenGame", JSON.stringify(chosenGame));
+  } else {
+    localStorage.setItem("chosenGame", JSON.stringify(chosenGame));
+  }
 }
 
-const browseSellerBtn = document.querySelectorAll(".browse-sellers-btn");
+const browseSellersBtn = document.querySelectorAll(".browse-sellers-btn");
 
-browseSellerBtn.forEach((button) => {
+browseSellersBtn.forEach((button) => {
   button.addEventListener("click", handleClickEvent);
 });
 
