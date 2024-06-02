@@ -1,4 +1,4 @@
-import { accessToken, apiKey, apiURL } from "./localStorage.js";
+import { accessToken, apiKey, apiURL } from "./local-storage.js";
 
 async function fetchAPIData(apiKey) {
   const options = {

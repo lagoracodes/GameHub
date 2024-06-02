@@ -1,5 +1,6 @@
 const checkOut = document.querySelector("#check-out");
 const loadingCircle = document.querySelector("#loading-circle");
+const h1Checkout = document.querySelector("#h1-checkout");
 
 async function retrieveDataFromLocalStorage(key) {
   return new Promise((resolve, reject) => {
@@ -15,13 +16,96 @@ async function retrieveDataFromLocalStorage(key) {
 async function initDataRetrieval() {
   try {
     const chosenSeller = await retrieveDataFromLocalStorage("chosenSeller");
-
     const chosenGame = await retrieveDataFromLocalStorage("chosenGame");
+
+    if (
+      !chosenSeller ||
+      chosenSeller.length === 0 ||
+      !chosenGame ||
+      chosenGame.length === 0
+    ) {
+      loadingCircle.remove();
+      h1Checkout.remove();
+      checkOut.innerHTML = `
+      <div class="checkout-svg">
+        <svg
+              viewBox="0 0 24 24"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <title>Shopping-cart</title>
+                <g
+                  id="🖥-Landing"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g id="Artboard" transform="translate(-74.000000, -239.000000)">
+                    <g
+                      id="Shopping-cart"
+                      transform="translate(74.000000, 239.000000)"
+                    >
+                      <rect
+                        id="Rectangle"
+                        x="0"
+                        y="0"
+                        width="24"
+                        height="24"
+                      ></rect>
+                      <path
+                        class="shopping-cart"
+                        d="M2.5,3.5 L4.57364,3.5 C4.81929,3.5 5.02855,3.67844 5.06736,3.921 L6.73058,14.3158 C6.88582,15.286 7.72287,15.9998 8.70546,15.9998 L17.3957,15.9998 C18.3331,15.9998 19.1447,15.3487 19.3481,14.4337 L20.7296,8.21674 C20.8684,7.59222 20.3932,6.9998 19.7534,6.9998 L5.83997,6.9998"
+                        id="Path"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      ></path>
+                      <circle
+                        id="Oval"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        cx="9.5"
+                        cy="21"
+                        r="1"
+                      ></circle>
+                      <circle
+                        id="Oval"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        cx="16.5"
+                        cy="21"
+                        r="1"
+                      ></circle>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+      </div>
+        <div class="check-out flex fd-col gap f-ai-c">
+          <div class="flex fd-col f-ai-c">
+            <h3>Your cart is currently empty</h3>
+            <p>Looks like you haven't added any games to your cart yet...</p>
+            <a href="games.html" class="add-to-cart-btn btn-sellers cart flex f-jc-c f-ai-c checkout"><span class="btn-span uppercase letter-spacing">Return to Shop</span></a>
+          </div>
+        </div>`;
+      return;
+    }
 
     const sellerName = chosenSeller[0].name;
     const sellerLocation = chosenSeller[0].location;
     const sellerImg = chosenSeller[0].img;
     const sellerPrice = chosenSeller[0].price;
+    const gameGenre = chosenGame[0].genre;
+    const gameYear = chosenGame[0].released;
 
     const gameTitle = chosenGame[0].title;
     const gameImg = chosenGame[0].img;
@@ -39,12 +123,17 @@ async function initDataRetrieval() {
                   </div>
                   <div class="divider-line"></div>
                   <div class="flex f-jc-sb gap">
-                    <div class="flex fd-col gap">
+                    <div class="flex gap">
                       <img
-                        class="game-cover"
+                        class="game-cover resize"
                         src="${gameImg}"
                         alt="video game cover"
                       />
+                      <p>
+                        <strong>GAME:</strong> "${gameTitle}" <br />
+                        <strong>GENRE:</strong> ${gameGenre} <br />
+                        <strong>YEAR OF RELEASE:</strong> ${gameYear} <br />
+                      </p>
                     </div>
                     <div
                       class="seller-card flex f-jc-c"
@@ -510,6 +599,8 @@ async function initDataRetrieval() {
     const checkOutCon = document.querySelector("#check-out-con");
 
     function handleBuyNowClick() {
+      localStorage.removeItem("chosenSeller");
+      localStorage.removeItem("chosenGame");
       checkOutCon.innerHTML = `<div id="check-out-finished">
                                 <div class="flex fd-col f-ai-c f-jc-c">
                                   <svg
@@ -557,7 +648,15 @@ async function initDataRetrieval() {
                                     </g>
                                   </svg>
                                   <h1>Thank you for your purchase!</h1>
-                                  <img class="img glow game-img" src="${gameImg}" alt="video game cover" />
+                                  <p class="order-complete-p">Your order has been complete! Check your email to get your order and learn more details about your purchase.</p>
+                                  <p class="p-small">What you ordered:</p>
+                                  <div class="divider-line checkout"></div>
+                                  <div class="checkout flex fd-col f-jc-sb f-ai-c"><p><strong>GAME TITLE:</strong> "${gameTitle}"</p> 
+                                  <p><strong>TOTAL PRICE:</strong> €${sellerPrice}</p> 
+                                  <p><strong>SOLD BY:</strong> ${sellerName}</p> 
+                                  <img class="img glow game-img" src="${gameImg}" alt="video game cover" /></div>
+                                  <div class="divider-line checkout"></div>
+                                  <a href="games.html" class="add-to-cart-btn btn-sellers cart flex f-jc-c f-ai-c checkout"><span class="btn-span uppercase letter-spacing">Return to Shop</span></a>
                                 </div>
                             </div>`;
     }

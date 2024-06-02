@@ -1,8 +1,9 @@
 export const showGameInfo = () => {
   const gameInfoCon = document.querySelector("#game-info-con");
-  const gameInfoBtn = document.querySelectorAll(".game-info-btn");
+  const gameInfoBtnCon = document.getElementsByClassName("game-info-btn-con");
 
   function handleGameInfoClick(event) {
+    event.preventDefault();
     const button = event.target;
     const gameCard = button.closest(".game-card");
     const gameTitle = gameCard.dataset.title;
@@ -11,6 +12,7 @@ export const showGameInfo = () => {
     const gameAgeRating = gameCard.dataset.age;
     const gameDescription = gameCard.dataset.description;
     const gameYear = gameCard.dataset.released;
+    console.log(gameImg);
 
     history.pushState({}, "", `?gameTitle=${encodeURIComponent(gameTitle)}`);
 
@@ -40,9 +42,15 @@ export const showGameInfo = () => {
     }
 
     closeOverlayBtn.addEventListener("click", closeOverlay);
+
+    gameInfoCon.addEventListener("click", function (event) {
+      if (event.target === gameInfoCon) {
+        closeOverlay();
+      }
+    });
   }
 
-  gameInfoBtn.forEach((button) => {
+  Array.from(gameInfoBtnCon).forEach((button) => {
     button.addEventListener("click", handleGameInfoClick);
   });
 };

@@ -1,5 +1,3 @@
-/* border: 2px dotted yellow; */
-
 .active,
 .active:hover {
   text-decoration: underline;
@@ -102,13 +100,13 @@ header > nav {
     height: auto;
   }
 
-  .desktop-header-icons > svg {
+  .desktop-header-icons svg {
     width: 1.562rem;
     height: auto;
   }
 
-  .desktop-header-icons > svg:not(:last-child) {
-    margin-right: 10px;
+  .header-icon {
+    margin-right: 0.35rem;
   }
 
   .shopping-cart {
@@ -145,9 +143,7 @@ svg:hover .icon {
   fill: var(--light-grey-hover);
 }
 
-svg:hover .shopping-cart,
-svg:hover circle,
-svg:hover .icon {
+svg:hover {
   filter: drop-shadow(0 0 1.75px var(--saturated-purple));
 }
 

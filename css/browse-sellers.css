@@ -29,31 +29,52 @@
   width: 8rem;
   height: 2.76rem;
   border-radius: 20px;
+  background-color: #7963ff50;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
+  box-shadow: 0 5px 15px #6240ea25,
+    rgba(255, 255, 255, 0.171) 0px 1px 0px 0px inset;
+}
+
+.btn-sellers:hover {
+  background-color: #6851ff71;
+  box-shadow: 0 5px 15px #623bff4f,
+    rgba(255, 255, 255, 0.26) 0px 1px 0px 0px inset;
 }
 
 .btn-sellers.price {
+  background-color: transparent;
   margin-right: 0.5rem;
   font-size: 1.24rem;
   letter-spacing: 1.5px;
-  border: 2px solid #ffffff20;
+  border: 1px solid #ffffff20;
+  box-shadow: none;
+}
+
+.btn-sellers.price:hover {
+  background-color: inherit;
+  box-shadow: none;
 }
 
 .btn-sellers.cart {
-  font-size: 0.9rem;
+  width: 7rem;
+  height: 2.5rem;
   letter-spacing: 0.05rem;
   cursor: pointer;
-  background-color: #7963ff50;
-  box-shadow: 0 5px 15px #6240ea25;
 }
 
-.btn-sellers.cart:hover {
-  background-color: #7963ff65;
-  box-shadow: 0 5px 15px #6240ea40;
-}
+/* .btn-sellers.cart:hover {
+  background-color: #6851ff71;
+  box-shadow: 0 5px 15px #623bff4f,
+    rgba(255, 255, 255, 0.26) 0px 1px 0px 0px inset;
+} */
 
 .btn-span {
-  font-size: 12px;
+  font-size: 10.5px;
+}
+
+.seller-buttons h5 {
+  font-weight: 300;
 }
 
 @media only screen and (max-width: 600px) {

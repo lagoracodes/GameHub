@@ -1,16 +1,18 @@
 import { usableData } from "./api.js";
 import { showGameInfo } from "./show-game-info.js";
+import { showMoreGames } from "./show-more-games.js";
 
 const chosenGame = [];
 
-const trendingGames = document.querySelector("#trending-games");
+const allGamesCon = document.querySelector("#all-games-con");
+const allGames = document.querySelector("#all-games");
 const loadingCircle = document.querySelector("#loading-circle");
+const sort = document.querySelector("#sort");
 
 if (usableData) {
   loadingCircle.remove();
-
+  sort.classList.remove("hide");
   for (let i = 0; i < usableData.length; i++) {
-    const imgUrl = usableData[i].image.url;
     const gameID = usableData[i].id;
     const gameTitle = usableData[i].title;
     const gameImg = usableData[i].image.url;
@@ -21,50 +23,66 @@ if (usableData) {
     const gameDescription = usableData[i].description;
     const gameReleaseYear = usableData[i].released;
 
-    if (
-      gameTitle === "Forge Legend" ||
-      gameTitle === "Cyberpunk" ||
-      gameTitle === "Space War"
-    ) {
-      trendingGames.innerHTML += `
+    const emptyHeart = "./resources/images/icons/heart-empty.png";
+
+    allGames.classList.remove("flex");
+    allGames.classList.add("grid-wrapper");
+
+    allGames.innerHTML += `
     <div class="game-card flex f-ai-c" data-id="${gameID}" data-title="${gameTitle}" data-img="${gameImg}" data-price="${gamePrice}" data-favorite="${gameFavorite}" data-age="${gameAgeRating}" data-description="${gameDescription}" data-released="${gameReleaseYear}" data-genre=${gameGenre}>
       <div class="img-wrapper">
         <img
           class="game-picture"
-          src= ${imgUrl}
-          alt="video game cover picture"
+          src= ${gameImg}
+          alt="${gameTitle} cover picture"
         />
       </div>
         <div class="flex lower-panel">
-          <h3 class="game-title letter-spacing">${gameTitle}</h3>
-              <a class="btn-2 flex f-ai-c f-jc-c game-info-btn" href="#">
-                <span class="btn-span uppercase letter-spacing">game info</span>
+          <div class="game-title-con-target"><h3 class="game-title letter-spacing">${gameTitle}</h3></div>
+      
+              
+              <div class="flex f-jc-c f-ai-c gap">
+              <a class="btn-2 flex f-ai-c f-jc-c game-info-btn-con" href="#">
+                <span class="btn-span uppercase letter-spacing game-info-btn">game info</span>
               </a>
+              <img class="heart-icon hide-for-mobile-devices" src="${emptyHeart}" data-id="${gameID}" alt="heart icon"/>
+              </div>
 
-          <div class="flex f-jc-c f-ai-c gap">
+          <div class="flex f-jc-c f-ai-c gap price-con">
             <div>
               <h4 class="uppercase letter-spacing">
                 current <br />
                 lowest price
               </h4>
-              <h3 class="letter-spacing">${gamePrice}</h3>
+              <h3 class="game-price letter-spacing">${gamePrice}</h3>
             </div>
-            <a class="btn-1 flex f-ai-c f-jc-c browse-sellers-btn" href="/browse-sellers.html">
-                <span class="btn-span uppercase letter-spacing">browse <br />
-                sellers</span>
+            <a class="btn-1 flex f-ai-c f-jc-c browse-sellers-btn" href="./browse-sellers.html">
+                <span class="btn-span letter-spacing">Browse <br />
+                Sellers</span>
               </a>
           </div>
       </div>
     </div>
       `;
+
+    const gameTitleH3 = document.querySelectorAll(".game-title");
+
+    if (gameTitleH3[i].innerText.length >= 20) {
+      gameTitleH3[i].classList.add("margin");
+    } else {
+      continue;
     }
   }
 } else {
-  trendingGames.classList.add("fd-col");
-  trendingGames.innerHTML += `
+  sort.remove();
+  allGamesCon.innerHTML += `
                         <div class="flex fd-col f-ai-c"><h3>UNABLE TO RETRIEVE DATA</h3>
                         <p>(we are working to fix the issue, please come back later)</p></div>`;
 }
+
+document.dispatchEvent(new Event("allGamesLoaded"));
+
+showMoreGames();
 
 function handleClickEvent(event) {
   const button = event.target;
@@ -103,9 +121,9 @@ function handleClickEvent(event) {
   }
 }
 
-const browseSellersBtn = document.querySelectorAll(".browse-sellers-btn");
+const browseSellerBtn = document.querySelectorAll(".browse-sellers-btn");
 
-browseSellersBtn.forEach((button) => {
+browseSellerBtn.forEach((button) => {
   button.addEventListener("click", handleClickEvent);
 });
 

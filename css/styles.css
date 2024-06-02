@@ -2,14 +2,13 @@
 @import "/css/variables.css";
 @import "/css/animations.css";
 @import "/css/main.css";
+@import "/css/games.css";
 @import "/css/sort.css";
 @import "/css/browse-sellers.css";
 @import "/css/show-game-info.css";
 @import "/css/footer.css";
+@import "/css/icons.css";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @font-face {
   font-family: "NineTsuki";
   src: url("/resources/fonts/NineTsuki.otf");
@@ -38,16 +37,19 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   font-family: "Poppins", sans-serif;
   color: var(--light-grey);
-  font-size: 1em; /* 16px */
+  font-size: 1em;
   background-color: var(--bg-c);
   line-height: 1.3;
 }
 
 main {
+  flex: 1;
   padding-bottom: 5rem;
 }
 
@@ -65,13 +67,6 @@ h2 {
   white-space: nowrap;
 }
 
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Roboto", sans-serif;
-}
-
 p {
   font-size: 1rem;
 }
@@ -81,6 +76,12 @@ a:visited,
 a:hover {
   text-decoration: none;
   color: var(--light-grey);
+}
+
+input,
+textarea {
+  font-family: "Poppins", sans-serif;
+  padding-left: 0.25rem;
 }
 
 .uppercase {
@@ -137,8 +138,51 @@ body.flex {
   gap: 1rem;
 }
 
+.gap-1 {
+  gap: 0.5rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.gap-3 {
+  gap: 3rem;
+}
+
 .marg {
   margin: 0 0 0 0;
+}
+
+a:has(svg) {
+  display: flex;
+  width: 1.562rem;
+}
+
+#cart-icon-container {
+  position: relative;
+}
+
+#cart-bubble {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  left: 0;
+  right: 0;
+  margin-left: 0.51rem;
+  margin-top: -0.3rem;
+  border-radius: 7px;
+  background-color: var(--saturated-purple);
+  box-shadow: 0 0 10px rgba(79, 31, 255, 0.521);
+  outline: 2px solid rgba(55, 0, 255, 0.521);
+  /* filter: blur(0.05rem); */
+  text-align: center;
+  z-index: -1;
+}
+
+#cart-bubble h6 {
+  font-size: 0.6rem;
+  color: var(--light-grey);
 }
 
 .bg-color-bubble-center {
@@ -189,22 +233,22 @@ body.flex {
 
 @media only screen and (max-width: 600px) {
   h1 {
-    font-size: 2.5em; /* 48px */
+    font-size: 2.5em;
   }
 
   h2 {
-    font-size: 2em; /* 36px */
+    font-size: 2em;
   }
 
   h3 {
-    font-size: 1.5em; /* 28px */
+    font-size: 1.5em;
   }
 
   h4 {
-    font-size: 1.125em; /* 18px */
+    font-size: 1.125em;
   }
 
-  .container {
+  header {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
   }
@@ -217,23 +261,28 @@ body.flex {
   .hide-for-mobile-devices {
     display: none;
   }
+
+  main {
+    margin-bottom: 1rem;
+  }
+
 }
 
 @media only screen and (min-width: 601px) {
   h1 {
-    font-size: 3em; /* 48px */
+    font-size: 3.5em;
   }
 
   h2 {
-    font-size: 2.25em; /* 36px */
+    font-size: 2.25em;
   }
 
   h3 {
-    font-size: 1.75em; /* 28px */
+    font-size: 1.75em;
   }
 
   h4 {
-    font-size: 1.125em; /* 18px */
+    font-size: 1.125em;
   }
 
   .container {

@@ -1,0 +1,19 @@
+.heart-icon {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.app-icons img {
+  margin-top: 0.4rem;
+}
+
+.social-media-icons h4 {
+  margin-bottom: 0.25rem;
+}
+
+.icon-glow,
+.icon-glow:hover {
+  filter: drop-shadow(0 0 1.75px var(--light-purple));
+}

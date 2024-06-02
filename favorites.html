@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About - GameHub</title>
+    <title>Favorites - GameHub</title>
     <link rel="stylesheet" href="css/styles.css" />
     <!-- Hotjar Tracking Code for https://game-hub-laura-slivka.netlify.app/ -->
     <script>
@@ -50,7 +50,7 @@
         >
           <a href="index.html">Home</a>
           <a href="games.html">Games</a>
-          <a class="active" href="#">About</a>
+          <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
         </div>
         <div
@@ -58,6 +58,7 @@
         >
           <a id="heart-icon-container" class="header-icon" href="favorites.html"
             ><svg
+              class="icon-glow"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -154,64 +155,20 @@
       <div class="mobile-menu container hide-for-desktop-devices has-fade">
         <a href="index.html">Home</a>
         <a href="games.html">Games</a>
-        <a class="active" href="#">About</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
     </header>
-    <main id="about" class="container">
-      <section class="flex fd-col f-ai-c">
-        <h1 class="h1-about">What is Game Hub?</h1>
-        <p>
-          Game Hub is the ultimate online marketplace for video game lovers,
-          connecting sellers and buyers effortlessly. Sellers can easily
-          showcase their games, while buyers can find their favorites with ease.
-          What makes Game Hub special is its friendly community vibe, offering
-          not just transactions but a place for gamers to connect and share.
-          It's more than just a platform—it's a gathering spot for all things
-          gaming, where everyone can find what they're looking for and share
-          their passion!
-        </p>
+    <main class="container">
+      <section>
+        <h1>Favorites</h1>
+        <div id="favorites-con" class="flex fd-col f-ai-c">
+          <div id="loading-circle" class="loader marg"></div>
+          <div id="favorites" class="flex f-jc-c"></div>
+        </div>
       </section>
       <section>
-        <div id="reviews" class="flex fd-col f-ai-c">
-          <div>
-            <p>featured on:</p>
-            <ul class="flex f-ai-c f-jc-c gap">
-              <li>
-                <img
-                  class="img"
-                  src="/resources/images/logo/pc-gamer.png"
-                  alt="pc gamer logo"
-                />
-                <p>"The coolest place on the market!"</p>
-              </li>
-              <li>
-                <img
-                  class="img"
-                  src="/resources/images/logo/ign.png"
-                  alt="ign logo"
-                />
-                <p>"Everybody has to try it out!"</p>
-              </li>
-              <li>
-                <img
-                  class="img"
-                  src="/resources/images/logo/espn.png"
-                  alt="espn logo"
-                />
-                <p>"Best place to buy and sell video games!"</p>
-              </li>
-              <li>
-                <img
-                  class="img"
-                  src="/resources/images/logo/gamespot.png"
-                  alt="gamespot logo"
-                />
-                <p>"10/10 we recommend Game Hub to everyone!"</p>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <div id="game-info-con" class="overlay hide"></div>
       </section>
     </main>
     <footer>
@@ -374,5 +331,7 @@
       </div>
     </footer>
     <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/heart-icons.js"></script>
+    <script type="module" src="js/favorites.js"></script>
   </body>
 </html>
