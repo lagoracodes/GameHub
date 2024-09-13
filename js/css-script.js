@@ -24,5 +24,3 @@ btnHamburger.addEventListener("click", function () {
     });
   }
 });
-
-// bgColor.style.height = body.scrollHeight + "px"; // poitioning background color bubbles depending on the page height

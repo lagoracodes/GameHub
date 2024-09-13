@@ -13,15 +13,16 @@ if (usableData) {
   loadingCircle.remove();
   sort.classList.remove("hide");
   for (let i = 0; i < usableData.length; i++) {
-    const gameID = usableData[i].id;
-    const gameTitle = usableData[i].title;
-    const gameImg = usableData[i].image.url;
-    const gameGenre = usableData[i].genre;
-    const gamePrice = usableData[i].discountedPrice;
-    const gameFavorite = usableData[i].favorite;
-    const gameAgeRating = usableData[i].ageRating;
+    const gameID = usableData[i].attributes.id;
+    const gameTitle = usableData[i].name;
+    const gameImg = usableData[i].images[0].src;
+    const gameGenre = usableData[i].attributes[2].options;
+    const gamePrice = usableData[i].price;
+    const gameFavorite = usableData[i].attributes[2].options;
+    console.log(gameFavorite);
+    const gameAgeRating = usableData[i].attributes[0].options;
     const gameDescription = usableData[i].description;
-    const gameReleaseYear = usableData[i].released;
+    const gameReleaseYear = usableData[i].attributes[4].options;
 
     const emptyHeart = "./resources/images/icons/heart-empty.png";
 
