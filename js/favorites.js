@@ -15,22 +15,30 @@ if (favorites.length === 0) {
   fetchGameDetails(favorites)
     .then((games) => {
       games.forEach((game) => {
+        const gameID = game.attributes[3].options.toString();
+        const gameTitle = game.name;
+        const gameImg = game.images[0].src;
+        const gameGenre = game.attributes[2].options;
+        const gamePrice = game.price;
+        const gameAgeRating = game.attributes[0].options;
+        const gameDescription = game.description;
+        const gameReleaseYear = game.attributes[4].options;
         favoritesContainer.innerHTML += `
-          <div class="game-card flex f-ai-c" data-id="${game.id}" data-title="${game.title}" data-img="${game.image.url}" data-price="${game.price}" data-favorite="true" data-age="${game.ageRating}" data-description="${game.description}" data-released="${game.released}" data-genre=${game.genre}>
+          <div class="game-card flex f-ai-c" data-id="${gameID}" data-title="${gameTitle}" data-img="${gameImg}" data-price="${gamePrice}" data-favorite="true" data-age="${gameAgeRating}" data-description="${gameDescription}" data-released="${gameReleaseYear}" data-genre=${gameGenre}>
             <div class="img-wrapper">
               <img
                 class="game-picture"
-                src= ${game.image.url}
-                alt="${game.title} cover picture"
+                src= ${gameImg}
+                alt="${gameTitle} cover picture"
               />
             </div>
             <div class="flex lower-panel">
-              <div class="game-title-con-target"><h3 class="game-title letter-spacing">${game.title}</h3></div>
+              <div class="game-title-con-target"><h3 class="game-title letter-spacing">${gameTitle}</h3></div>
               <div class="flex f-jc-c f-ai-c gap">
                 <a class="btn-2 flex f-ai-c f-jc-c game-info-btn-con" href="#">
                   <span class="btn-span uppercase letter-spacing game-info-btn">game info</span>
                 </a>
-                <img class="heart-icon" src="./resources/images/icons/heart-filled.png" data-id="${game.id}" alt="heart icon"/>
+                <img class="heart-icon" src="./resources/images/icons/heart-filled.png" data-id="${gameID}" alt="heart icon"/>
               </div>
               <div class="flex f-jc-c f-ai-c gap price-con">
                 <div>
@@ -38,7 +46,7 @@ if (favorites.length === 0) {
                     current <br />
                     lowest price
                   </h4>
-                  <h3 class="game-price letter-spacing">${game.price}</h3>
+                  <h3 class="game-price letter-spacing">${gamePrice}</h3>
                 </div>
                 <a class="btn-1 flex f-ai-c f-jc-c browse-sellers-btn" href="./browse-sellers.html">
                   <span class="btn-span letter-spacing">Browse <br />
@@ -49,7 +57,9 @@ if (favorites.length === 0) {
           </div>
         `;
       });
+
       const heartIcons = document.querySelectorAll(".heart-icon");
+
       heartIcons.forEach((icon) => {
         icon.addEventListener("click", function () {
           const gameID = icon.dataset.id;
@@ -78,7 +88,10 @@ if (favorites.length === 0) {
 }
 
 async function fetchGameDetails(favoriteIDs) {
-  return usableData.filter((game) => favoriteIDs.includes(game.id));
+  const matchedGames = usableData.filter((game) =>
+    favoriteIDs.includes(game.attributes[3].options.toString())
+  );
+  return matchedGames;
 }
 
 function handleClickEvent(event) {

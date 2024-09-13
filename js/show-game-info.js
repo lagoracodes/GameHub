@@ -13,7 +13,6 @@ export const showGameInfo = () => {
     const gameAgeRating = gameCard.dataset.age;
     const gameDescription = gameCard.dataset.description;
     const gameYear = gameCard.dataset.released;
-    console.log(gameImg);
 
     history.pushState({}, "", `?gameID=${encodeURIComponent(gameID)}`);
 
