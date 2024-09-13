@@ -6,6 +6,7 @@ export const showGameInfo = () => {
     event.preventDefault();
     const button = event.target;
     const gameCard = button.closest(".game-card");
+    const gameID = gameCard.dataset.id;
     const gameTitle = gameCard.dataset.title;
     const gameImg = gameCard.dataset.img;
     const gameGenre = gameCard.dataset.genre;
@@ -14,7 +15,7 @@ export const showGameInfo = () => {
     const gameYear = gameCard.dataset.released;
     console.log(gameImg);
 
-    history.pushState({}, "", `?gameTitle=${encodeURIComponent(gameTitle)}`);
+    history.pushState({}, "", `?gameID=${encodeURIComponent(gameID)}`);
 
     gameInfoCon.classList.remove("hide");
 

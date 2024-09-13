@@ -13,13 +13,12 @@ if (usableData) {
   loadingCircle.remove();
   sort.classList.remove("hide");
   for (let i = 0; i < usableData.length; i++) {
-    const gameID = usableData[i].attributes.id;
+    const gameID = usableData[i].attributes[3].options;
     const gameTitle = usableData[i].name;
     const gameImg = usableData[i].images[0].src;
     const gameGenre = usableData[i].attributes[2].options;
     const gamePrice = usableData[i].price;
-    const gameFavorite = usableData[i].attributes[2].options;
-    console.log(gameFavorite);
+    const gameFavorite = usableData[i].attributes[1].options;
     const gameAgeRating = usableData[i].attributes[0].options;
     const gameDescription = usableData[i].description;
     const gameReleaseYear = usableData[i].attributes[4].options;
